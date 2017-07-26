@@ -28,5 +28,10 @@ $(document).ready(function() {
 
 	// Bootstrap Modal
 	$("#login-drop").modal();
+
+	// Select
+	if ($(".selectpicker").length){
+        $(".selectpicker").selectpicker();
+    };
     
 });

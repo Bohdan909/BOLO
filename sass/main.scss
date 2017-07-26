@@ -4171,9 +4171,83 @@ $colors: 15;
     .right-column {
         width: calc(100% - 245px);
         width: -webkit-calc(100% - 245px);
+
+        .widget-block {
+            padding: 35px 30px 25px;
+        }
+
+        .title-3 {
+            margin-bottom: 25px;
+        }
+
+        .form-input-r {
+            margin-bottom: 19px;
+        }
+
+        .basket-cell-name {
+            width: 46%;
+            padding-top: 15px;
+        }
     }
 }
 
 .cabinet-column {
     padding: 0;
+}
+
+.cabinet-p-top {
+    padding: 20px 30px 25px;
+
+    .title-s {
+        margin-bottom: 0;
+    }
+}
+
+.cabinet-point {
+    border-top: 1px solid $col-bor;
+
+    > span {
+        @extend .trans;
+        @include color-b(0.6);
+        display: block;
+        padding: 25px 30px;
+        font-size: 15px;
+        cursor: pointer;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    &.is-current span {
+        color: $col-h;
+    }
+}
+
+.form-cabinet {
+
+    .column {
+        width: 295px;
+        margin-right: 22px;
+    }
+
+    .btn-b {
+        width: 215px;
+    }
+}
+
+.basket-cell-to-bsk {
+    width: 80px;
+
+    .btn-i {
+        position: static;
+        margin: auto;
+    }
+}
+
+.price-e {
+
+    .prod-name {
+        margin-bottom: 14px;
+    }
 }

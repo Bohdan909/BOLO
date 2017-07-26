@@ -25,7 +25,7 @@ module.exports  = function(grunt){
         uglify: {
             my_target: {
                files: {
-                'js/min/jquery.keyboard.js': ['js/jquery.keyboard.js']
+                'js/min/bootstrap-select.min.js': ['js/bootstrap-select.js']
               }
             }
         },

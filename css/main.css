@@ -1,4 +1,4 @@
-.ps, .info-block:before, .drop-item span i:after, .items:before, .header-items-drop:before, .cabinet-drop:before, .cabinet-login:before, .breadcrumbs li:after, .circ:before, .circ:after, .prod-desc-item:before, .border-top:before, .checkbox-item .checkbox:before, .btn:after, .popup-bg, .close:after, .popup-side-head:after, .popup-ask .popup-side:after, .modal-bg:after, .delete:before, .delete:after, .product-menu li .ico:before, .product-menu li .ico:after, .btn-i-b:after, .tooltipsy:after, .tooltip-c:after, .basket-block:before, .basket-section:before, .basket-order-item .basket-cell-img i.remove:after, .basket-order-item .img i.remove:after, .basket-product .basket-cell-img i.remove:after, .basket-product .img i.remove:after, .faq-navigation .ico:before, .faq-navigation .ico:after, .faq-head i:before, .faq-head i:after, .feedback-block .img:before, .more span:after, .share-wrap .mark:after, .instagram-center .img:after, .instagram-t:before, .product-carousel-section:before, .go:after, .timer-block p:after, .bksp:before, .pnl-block:before, .photo-case-wrap:after, .prod-card-right hgroup.title-wrap:after,
+.ps, .info-block:before, .drop-item span i:after, .items:before, .header-items-drop:before, .cabinet-drop:before, .cabinet-login:before, .breadcrumbs li:after, .circ:before, .circ:after, .prod-desc-item:before, .border-top:before, .checkbox-item .checkbox:before, .btn:not(.dropdown-toggle):after, .popup-bg, .close:after, .popup-side-head:after, .popup-ask .popup-side:after, .modal-bg:after, .delete:before, .delete:after, .product-menu li .ico:before, .product-menu li .ico:after, .btn-i-b:after, .tooltipsy:after, .tooltip-c:after, .basket-block:before, .basket-section:before, .basket-order-item .basket-cell-img i.remove:after, .basket-order-item .img i.remove:after, .basket-product .basket-cell-img i.remove:after, .basket-product .img i.remove:after, .faq-navigation .ico:before, .faq-navigation .ico:after, .faq-head i:before, .faq-head i:after, .feedback-block .img:before, .more span:after, .share-wrap .mark:after, .instagram-center .img:after, .instagram-t:before, .product-carousel-section:before, .go:after, .timer-block p:after, .bksp:before, .pnl-block:before, .photo-case-wrap:after, .prod-card-right hgroup.title-wrap:after,
 .prod-card-right .prod-card-btm:after, .desc-point .line:after {
   content: "";
   display: block;
@@ -6,7 +6,7 @@
   top: 0;
 }
 
-.trans, .csstransforms #header.animated .logo-wrap, .csstransforms #header.animated .logo-wrap span, .csstransforms #header.animated .info-block.tel, .csstransforms #header.animated .header-items, .csstransforms #header.animated .menu li a, .prod-name, .title-m, .drop-item > span em:after, .drop-item .drop, .cabinet-drop ul li a, .menu ul li > a, .block.block-hover, .button-block a, .like .def, .like .hov, .checkbox-item .checkbox-text, .checkbox-item .checkbox-text-m, .btn:after, .btn-bdr, .btn-bdr-2, .btn-g, .btn-full, .select-t .select-t-lbl span:after, .select-t .select-t-item, .filter-item-head, .filter-option, .filter-item-head:after, .filter-item-head span, .filter-item-head .delete, button.btn-s, .noUi-horizontal .noUi-handle, .product-menu li, .basket-product, .faq-navigation li, .faq-head span, .product-items .circ, .btn-play {
+.trans, .csstransforms #header.animated .logo-wrap, .csstransforms #header.animated .logo-wrap span, .csstransforms #header.animated .info-block.tel, .csstransforms #header.animated .header-items, .csstransforms #header.animated .menu li a, .prod-name, .title-m, .drop-item > span em:after, .drop-item .drop, .cabinet-drop ul li a, .menu ul li > a, .block.block-hover, .button-block a, .like .def, .like .hov, .checkbox-item .checkbox-text, .checkbox-item .checkbox-text-m, .btn:not(.dropdown-toggle):after, .btn-bdr, .btn-bdr-2, .btn-g, .btn-full, .select-t .select-t-lbl span:after, .select-t .select-t-item, .filter-item-head, .filter-option, .filter-item-head:after, .filter-item-head span, .filter-item-head .delete, button.btn-s, .noUi-horizontal .noUi-handle, .product-menu li, .basket-product, .faq-navigation li, .faq-head span, .product-items .circ, .btn-play, .cabinet-point > span {
   transition: all 0.2s ease-out;
   -webkit-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
@@ -569,6 +569,12 @@ h5 {
 
 .title-2 {
   font-size: 22px;
+}
+
+.title-3 {
+  color: #2d2d2d;
+  text-transform: uppercase;
+  font-family: "PFDinTextPro-Medium";
 }
 
 .title-s span, .title-d span {
@@ -1848,6 +1854,19 @@ textarea {
   opacity: 0;
 }
 
+.form-input-r.with-link {
+  padding-right: 85px;
+}
+.form-input-r.with-link > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85px;
+  font-size: 15px;
+  line-height: 52px;
+  color: #2bcfca;
+}
+
 .form-input-cols {
   margin-bottom: 15px;
 }
@@ -1922,6 +1941,17 @@ textarea {
 }
 .form-input.form-ta textarea:-ms-input-placeholder {
   color: #747474;
+}
+
+.form-columns:before, .form-columns:after {
+  content: " ";
+  display: table;
+}
+.form-columns:after {
+  clear: both;
+}
+.form-columns .column {
+  float: left;
 }
 
 /* ---------------
@@ -2064,6 +2094,81 @@ textarea {
 /* ---------------
     Selects
     -------------- */
+.form-select {
+  position: relative;
+}
+.form-select .dropdown-toggle {
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  border-radius: 35px;
+  position: relative;
+  border: 2px solid #E3E3E3;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 55px;
+}
+.form-select .dropdown-toggle:hover .filter-option {
+  color: #2bcfca;
+}
+.form-select .dropdown-toggle .filter-option {
+  padding: 0 19px;
+  border: none;
+  height: auto;
+  line-height: 52px;
+  font-size: 15px;
+  color: #747474;
+}
+.form-select .dropdown-toggle .filter-option:hover {
+  background: none;
+}
+.form-select .dropdown-toggle .caret {
+  position: absolute;
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-left-color: #E3E3E3;
+  pointer-events: none;
+  border-right: 1px solid #E3E3E3;
+  border-top: 1px solid #E3E3E3;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  top: 20px;
+  right: 21px;
+  border-width: 2px;
+}
+.form-select div.dropdown-menu {
+  border: none;
+}
+.form-select .dropdown-menu {
+  max-height: none !important;
+  min-height: 100% !important;
+  overflow: visible !important;
+  top: 56px;
+  right: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.form-select .dropdown-menu ul {
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  border-radius: 27px;
+  overflow: hidden !important;
+  top: 0;
+  border: 2px solid #E3E3E3;
+}
+.form-select .dropdown-menu ul > li {
+  cursor: pointer;
+}
+.form-select .dropdown-menu ul > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  outline: none !important;
+}
+
 /* ----------------
     Perfect Scroll
     --------------- */
@@ -2084,7 +2189,7 @@ textarea {
 /* ---------------
     Buttons
     -------------- */
-.btn, .btn-full {
+.btn:not(.dropdown-toggle), .btn-full:not(.dropdown-toggle) {
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -2095,25 +2200,25 @@ textarea {
   font-family: "PFDinTextPro-Medium";
 }
 
-.btn {
+.btn:not(.dropdown-toggle) {
   padding: 0 20px;
   position: relative;
   display: inline-block;
   height: 47px;
   line-height: 47px;
 }
-.btn.btn-b {
+.btn:not(.dropdown-toggle).btn-b {
   height: 55px;
   line-height: 55px;
   font-size: 14px;
 }
-.btn span {
+.btn:not(.dropdown-toggle) span {
   position: relative;
   z-index: 1;
   font-size: 14px;
   letter-spacing: 0.3px;
 }
-.btn:after {
+.btn:not(.dropdown-toggle):after {
   -webkit-border-radius: 35px;
   -moz-border-radius: 35px;
   -ms-border-radius: 35px;
@@ -2129,7 +2234,7 @@ textarea {
   background: -webkit-linear-gradient(34deg, #60e8bd 0%, #00bcd4 100%);
   background: -ms-linear-gradient(34deg, #60e8bd 0%, #00bcd4 100%);
 }
-.btn:hover:after {
+.btn:not(.dropdown-toggle):hover:after {
   opacity: 1;
 }
 
@@ -2143,6 +2248,10 @@ textarea {
   display: none;
 }
 
+.btn-f {
+  width: 100%;
+}
+
 .btn-g {
   background-color: #ebebeb;
   color: #747474;
@@ -2151,21 +2260,24 @@ textarea {
   background-color: #dcdada;
 }
 
-.btn-bdr, .btn-bdr-2 {
-  border: 2px solid #e8e9ea;
-  background: none;
+.btn-bdr.btn, .btn-bdr-2.btn {
+  border: 2px solid #e8e9ea !important;
+  background: none !important;
   color: #2bcfca;
 }
-.btn-bdr.btn-b, .btn-bdr-2.btn-b {
+.btn-bdr.btn.btn-b, .btn-bdr-2.btn.btn-b {
   line-height: 51px;
 }
-.btn-bdr:hover, .btn-bdr-2:hover {
-  border-color: #2bcfca;
+.btn-bdr.btn:hover, .btn-bdr-2.btn:hover {
+  border-color: #2bcfca !important;
+}
+.btn-bdr.btn:after, .btn-bdr-2.btn:after {
+  display: none;
 }
 
-.btn-bdr-2 {
-  border-width: 2px;
-  border-color: #c6c6c6;
+.btn-bdr-2.btn {
+  border-width: 2px !important;
+  border-color: #c6c6c6 !important;
   color: #747474;
 }
 
@@ -6415,9 +6527,66 @@ button.btn-s:hover {
   width: calc(100% - 245px);
   width: -webkit-calc(100% - 245px);
 }
+.cabinet-wrap .right-column .widget-block {
+  padding: 35px 30px 25px;
+}
+.cabinet-wrap .right-column .title-3 {
+  margin-bottom: 25px;
+}
+.cabinet-wrap .right-column .form-input-r {
+  margin-bottom: 19px;
+}
+.cabinet-wrap .right-column .basket-cell-name {
+  width: 46%;
+  padding-top: 15px;
+}
 
 .cabinet-column {
   padding: 0;
+}
+
+.cabinet-p-top {
+  padding: 20px 30px 25px;
+}
+.cabinet-p-top .title-s {
+  margin-bottom: 0;
+}
+
+.cabinet-point {
+  border-top: 1px solid #e4e4e4;
+}
+.cabinet-point > span {
+  color: rgba(0, 0, 0, 0.6);
+  display: block;
+  padding: 25px 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.cabinet-point > span:hover {
+  color: #000;
+}
+.cabinet-point.is-current span {
+  color: #2bcfca;
+}
+
+.form-cabinet .column {
+  width: 295px;
+  margin-right: 22px;
+}
+.form-cabinet .btn-b {
+  width: 215px;
+}
+
+.basket-cell-to-bsk {
+  width: 80px;
+}
+.basket-cell-to-bsk .btn-i {
+  position: static;
+  margin: auto;
+}
+
+.price-e .prod-name {
+  margin-bottom: 14px;
 }
 
 /*# sourceMappingURL=main.css.map */

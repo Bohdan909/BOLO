@@ -44,6 +44,12 @@ h5 { font-size: 13px; line-height: 16px; }
     font-size: 22px;
 }
 
+.title-3 {
+    color: $col-f-d;
+    text-transform: uppercase;
+    font-family: $font-med;
+}
+
 .title-s, .title-d {
     @extend .text;
 
