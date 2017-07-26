@@ -1,4 +1,4 @@
-.ps, .info-block:before, .drop-item span i:after, .items:before, .header-items-drop:before, .breadcrumbs li:after, .circ:before, .circ:after, .prod-desc-item:before, .border-top:before, .checkbox-item .checkbox:before, .btn:after, .popup-bg, .close:after, .popup-side-head:after, .popup-ask .popup-side:after, .delete:before, .delete:after, .product-menu li .ico:before, .product-menu li .ico:after, .btn-i-b:after, .tooltipsy:after, .tooltip-c:after, .basket-block:before, .basket-section:before, .basket-order-item .basket-cell-img i.remove:after, .basket-order-item .img i.remove:after, .basket-product .basket-cell-img i.remove:after, .basket-product .img i.remove:after, .faq-navigation .ico:before, .faq-navigation .ico:after, .faq-head i:before, .faq-head i:after, .feedback-block .img:before, .more span:after, .share-wrap .mark:after, .instagram-center .img:after, .instagram-t:before, .product-carousel-section:before, .go:after, .timer-block p:after, .bksp:before, .pnl-block:before, .photo-case-wrap:after, .prod-card-right hgroup.title-wrap:after,
+.ps, .info-block:before, .drop-item span i:after, .items:before, .header-items-drop:before, .cabinet-drop:before, .cabinet-login:before, .breadcrumbs li:after, .circ:before, .circ:after, .prod-desc-item:before, .border-top:before, .checkbox-item .checkbox:before, .btn:after, .popup-bg, .close:after, .popup-side-head:after, .popup-ask .popup-side:after, .modal-bg:after, .delete:before, .delete:after, .product-menu li .ico:before, .product-menu li .ico:after, .btn-i-b:after, .tooltipsy:after, .tooltip-c:after, .basket-block:before, .basket-section:before, .basket-order-item .basket-cell-img i.remove:after, .basket-order-item .img i.remove:after, .basket-product .basket-cell-img i.remove:after, .basket-product .img i.remove:after, .faq-navigation .ico:before, .faq-navigation .ico:after, .faq-head i:before, .faq-head i:after, .feedback-block .img:before, .more span:after, .share-wrap .mark:after, .instagram-center .img:after, .instagram-t:before, .product-carousel-section:before, .go:after, .timer-block p:after, .bksp:before, .pnl-block:before, .photo-case-wrap:after, .prod-card-right hgroup.title-wrap:after,
 .prod-card-right .prod-card-btm:after, .desc-point .line:after {
   content: "";
   display: block;
@@ -6,7 +6,7 @@
   top: 0;
 }
 
-.trans, .csstransforms #header.animated .logo-wrap, .csstransforms #header.animated .logo-wrap span, .csstransforms #header.animated .info-block.tel, .csstransforms #header.animated .header-items, .csstransforms #header.animated .menu li a, .prod-name, .title-m, .drop-item > span em:after, .drop-item .drop, .menu ul li > a, .block.block-hover, .button-block a, .like .def, .like .hov, .checkbox-item .checkbox-text, .checkbox-item .checkbox-text-m, .btn:after, .btn-bdr, .btn-bdr-2, .btn-g, .btn-full, .select-t .select-t-lbl span:after, .select-t .select-t-item, .filter-item-head, .filter-option, .filter-item-head:after, .filter-item-head span, .filter-item-head .delete, button.btn-s, .noUi-horizontal .noUi-handle, .product-menu li, .basket-product, .faq-navigation li, .faq-head span, .product-items .circ, .btn-play {
+.trans, .csstransforms #header.animated .logo-wrap, .csstransforms #header.animated .logo-wrap span, .csstransforms #header.animated .info-block.tel, .csstransforms #header.animated .header-items, .csstransforms #header.animated .menu li a, .prod-name, .title-m, .drop-item > span em:after, .drop-item .drop, .cabinet-drop ul li a, .menu ul li > a, .block.block-hover, .button-block a, .like .def, .like .hov, .checkbox-item .checkbox-text, .checkbox-item .checkbox-text-m, .btn:after, .btn-bdr, .btn-bdr-2, .btn-g, .btn-full, .select-t .select-t-lbl span:after, .select-t .select-t-item, .filter-item-head, .filter-option, .filter-item-head:after, .filter-item-head span, .filter-item-head .delete, button.btn-s, .noUi-horizontal .noUi-handle, .product-menu li, .basket-product, .faq-navigation li, .faq-head span, .product-items .circ, .btn-play {
   transition: all 0.2s ease-out;
   -webkit-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
@@ -947,7 +947,7 @@ a.info-block div:first-child:hover {
   right: 0;
 }
 
-.items-wrap {
+.items-wrap, .header-cabinet-wrap {
   position: relative;
   float: left;
   width: 57px;
@@ -993,13 +993,12 @@ a.info-block div:first-child:hover {
   font-family: "PFDinTextPro-Medium";
 }
 
-.header-items-drop {
+.header-items-drop, .cabinet-drop {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   border-radius: 8px;
   position: absolute;
-  display: none;
   top: 40px;
   right: 10px;
   width: 225px;
@@ -1012,25 +1011,25 @@ a.info-block div:first-child:hover {
   -webkit-transform: translateY(20px);
   -ms-transform: translateY(20px);
 }
-.header-items-drop.is-open {
+.header-items-drop.is-open, .cabinet-drop.is-open {
   animation: itemsOpen 0.3s linear forwards;
   -webkit-animation: itemsOpen 0.3s linear forwards;
   -ms-animation: itemsOpen 0.3s linear forwards;
 }
-.header-items-drop:before {
+.header-items-drop:before, .cabinet-drop:before {
   background: url(../images/sprites.png) -204px -92px;
   width: 17px;
   height: 10px;
   top: -10px;
   right: 29px;
 }
-.header-items-drop .header-drop-products {
+.header-items-drop .header-drop-products, .cabinet-drop .header-drop-products {
   max-height: 218px;
   overflow-y: auto;
   overflow-x: hidden;
   margin-bottom: 15px;
 }
-.header-items-drop .basket-product {
+.header-items-drop .basket-product, .cabinet-drop .basket-product {
   overflow: hidden;
   height: 100px;
   padding-top: 21px;
@@ -1038,32 +1037,36 @@ a.info-block div:first-child:hover {
   margin-bottom: 18px;
   border-bottom: 1px solid #e4e4e4;
 }
-.header-items-drop .basket-product:last-child {
+.header-items-drop .basket-product:last-child, .cabinet-drop .basket-product:last-child {
   margin-bottom: 0;
 }
-.header-items-drop .basket-product .img {
+.header-items-drop .basket-product .img, .cabinet-drop .basket-product .img {
   top: 5px;
   width: 80px;
   padding-left: 10px;
 }
-.header-items-drop .basket-product .img img {
+.header-items-drop .basket-product .img img, .cabinet-drop .basket-product .img img {
   height: 85px;
 }
-.header-items-drop .basket-product .img i.remove {
+.header-items-drop .basket-product .img i.remove, .cabinet-drop .basket-product .img i.remove {
   left: 4px;
   transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
 }
-.header-items-drop .btn {
+.header-items-drop .btn, .cabinet-drop .btn {
   width: 100%;
 }
-.header-items-drop .header-drop-count {
+.header-items-drop .header-drop-count, .cabinet-drop .header-drop-count {
   text-align: center;
   padding-top: 10px;
 }
-.header-items-drop .header-drop-hold {
+.header-items-drop .header-drop-hold, .cabinet-drop .header-drop-hold {
   text-align: center;
+}
+
+.header-items-drop {
+  display: none;
 }
 
 @keyframes itemsOpen {
@@ -1073,6 +1076,73 @@ a.info-block div:first-child:hover {
     -ms-transform: translateY(0px);
   }
 }
+.header-cabinet-wrap {
+  width: auto;
+}
+
+.cabinet-login {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.cabinet-login:before {
+  width: 21px;
+  height: 20px;
+  left: 0;
+  top: 2px;
+  background: url(../images/ico-login.png) no-repeat;
+  background-size: 100% auto !important;
+}
+.cabinet-login span {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 23px;
+  color: #2d2d2d;
+  font-family: "PFDinTextPro-Medium";
+}
+.cabinet-login:hover span {
+  text-decoration: none;
+}
+
+.cabinet-drop {
+  padding: 0;
+  top: 70px;
+  right: -10px;
+  outline: none !important;
+}
+.cabinet-drop ul li {
+  border-bottom: 1px solid #e4e4e4;
+}
+.cabinet-drop ul li:last-child {
+  border: none;
+}
+.cabinet-drop ul li a {
+  color: rgba(0, 0, 0, 0.6);
+  display: block;
+  padding: 29px 0 26px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "PFDinTextPro-Medium";
+}
+.cabinet-drop ul li a:hover {
+  color: #000 !important;
+}
+.cabinet-drop ul li.logout a {
+  color: #ee373b;
+}
+
+.modal.fade .modal-dialog.cabinet-drop {
+  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+}
+.modal.fade.in .modal-dialog.cabinet-drop {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+}
+
 .menu {
   text-align: center;
 }
@@ -2612,6 +2682,31 @@ body.popup-open {
     padding-bottom: 12px;
   }
 }
+.modal-open {
+  padding-right: 0 !important;
+  overflow-y: auto !important;
+}
+
+.modal {
+  padding-right: 0 !important;
+}
+
+.modal.fade {
+  opacity: 1 !important;
+}
+
+.modal-backdrop {
+  display: none !important;
+}
+
+.modal-bg:after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* --------------------
     Catalogue
     ------------------- */
@@ -6304,6 +6399,25 @@ button.btn-s:hover {
 }
 .cases li:nth-child(3) {
   left: -160px;
+}
+
+/* ---------------
+    Cabinet
+    -------------- */
+.cabinet-content#content {
+  padding: 55px 0 0;
+}
+
+.cabinet-wrap .left-column {
+  width: 235px;
+}
+.cabinet-wrap .right-column {
+  width: calc(100% - 245px);
+  width: -webkit-calc(100% - 245px);
+}
+
+.cabinet-column {
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

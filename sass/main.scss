@@ -4153,3 +4153,27 @@ $colors: 15;
         }
     }
 }
+
+/* ---------------
+    Cabinet
+    -------------- */
+
+.cabinet-content#content {
+    padding: 55px 0 0;
+}
+
+.cabinet-wrap {
+
+    .left-column {
+        width: 235px;
+    }
+
+    .right-column {
+        width: calc(100% - 245px);
+        width: -webkit-calc(100% - 245px);
+    }
+}
+
+.cabinet-column {
+    padding: 0;
+}

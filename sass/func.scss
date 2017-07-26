@@ -245,3 +245,11 @@ $headHeight: 137px;
     -ms-animation: $name $duration $func $delay;
     -webkit-animation: $name $duration $func $delay;
 }
+
+@mixin color-w($opacity){
+    color: rgba(255,255,255, $opacity);
+}
+
+@mixin color-b($opacity){
+    color: rgba(0,0,0, $opacity);
+}

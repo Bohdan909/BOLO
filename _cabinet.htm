@@ -14,6 +14,7 @@
 		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 		
         <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/main.css" />
 	</head>
@@ -96,7 +97,22 @@
 							</div>
 
 							<div class="header-cabinet-wrap">
-								
+								<button class="cabinet-login" type="button" data-toggle="modal" data-target="#cabinet-drop">
+									<span>Войти</span>
+								</button>
+
+								<div class="modal fade" id="cabinet-drop" tabindex="-1" role="dialog">
+									<div class="socket">
+										<div class="modal-dialog cabinet-drop" role="document">
+											<ul>
+												<li><a href="">Контакты</a></li>
+												<li><a href="">Доставка</a></li>
+												<li><a href="">история</a></li>
+												<li class="logout"><a href="">Выйти из аккаунта</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>		
@@ -119,18 +135,40 @@
 			</header><!-- / Header -->
 			
 			<!-- Content -->
-			<div id="content" class="socket">
-				<ul class="breadcrumbs animate-item fade">
-			    	<li><a href="">Главная страница</a></li>
-			    	<li>Оформления заказа</li>
-			    </ul>    
+			<div id="content" class="socket cabinet-content">
+				
 				
 				<hgroup class="title-wrap animate-item fade" data-screen="1">
-			    	<div class="title">Оформления заказа</div>
-			    	<div class="title-s">
-			    		Все поля обязательные для заполнения
-			    	</div>
+			    	<div class="title">Личный кабинет</div>
 				</hgroup>
+
+				<div class="cabinet-wrap clearfix">
+
+					<div class="left-column">
+						<div class="block widget-block cabinet-column animate-item move">
+							<div class="cabinet-point">
+								<div class="title-2">Профиль</div>
+								<div class="title-s">Сергей Иванов</div>
+							</div>
+							<div class="cabinet-point">
+								<a href="#cab-tab1">Контакты</a>
+							</div>
+							<div class="cabinet-point">
+								<a href="#cab-tab1">Доставка</a>
+							</div>
+							<div class="cabinet-point">
+								<a href="#cab-tab1">Избранные</a>
+							</div>
+							<div class="cabinet-point">
+								<a href="#cab-tab1">История</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="right-column">
+						
+					</div>
+				</div>
 				
 				<!-- Basket Order Wrap -->
 				<div class="basket-order-wrap clearfix">
@@ -494,6 +532,7 @@
 
         
 		<!-- Scripts -->
+		<script src="./js/bootstrap.min.js"></script> 
 		<script src="./js/modernizr-custom.js"></script>
         <script src="./js/jquery.maskedinput.min.js"></script>
 		<script src="./js/tooltipsy.min.js"></script> 

@@ -293,12 +293,15 @@ a.info-block div:first-child:hover {
     right: 0;
 }
 
-.items-wrap {
+.items-wrap, .header-cabinet-wrap {
     position: relative;
     float: left;
     width: 57px;
     margin-left: 28px;
 }
+
+
+
 
 .items {
     display: block;
@@ -341,10 +344,9 @@ a.info-block div:first-child:hover {
     }
 }
 
-.header-items-drop {
+.header-items-drop, .cabinet-drop {
     @include border-rad(8px);
     position: absolute;
-    display: none;
     top: 40px;
     right: 10px;
     width: 225px;
@@ -425,6 +427,10 @@ a.info-block div:first-child:hover {
     }
 }
 
+.header-items-drop {
+    display: none;
+}
+
 @keyframes itemsOpen {
     100% {
         transform: translateY(0px);
@@ -434,8 +440,97 @@ a.info-block div:first-child:hover {
 }
 
 
+// Cabinet Login
+.header-cabinet-wrap {
+    width: auto;
+}
+
+.cabinet-login {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &:before {
+        @extend .ps;
+        width: 21px;
+        height: 20px;
+        left: 0;
+        top: 2px;
+        background: url(../images/ico-login.png) no-repeat;
+        background-size: 100% auto !important;
+    }
+    
+    span {
+        text-decoration: underline;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 23px;
+        color: $col-f-d;
+        font-family: $font-med;
+    }
+
+    &:hover {
+
+        span {
+            text-decoration: none;
+        }
+    }
+}
+
+.cabinet-drop {
+    padding: 0;
+    top: 70px;
+    right: -10px;
+    outline: none !important;
+
+    ul {
+
+        li {
+            border-bottom: 1px solid $col-bor;
+
+            &:last-child {
+                border: none;
+            }
+
+            a {
+                @extend .trans;
+                @include color-b(0.6);
+                display: block;
+                padding: 29px 0 26px 30px;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $font-med;
+
+                &:hover {
+                    color: #000 !important;
+                }
+            }
+
+            &.logout a {
+                color: #ee373b;
+            }
+        }
+    }
+}
+
+.modal.fade  {
+    
+    .modal-dialog.cabinet-drop {
+        transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+    }
+
+    &.in .modal-dialog.cabinet-drop {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+    }
+}
 
 
+
+// Menu
 .menu {
     @include clearfix;
     @extend .socket;

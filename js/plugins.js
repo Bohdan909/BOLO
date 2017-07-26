@@ -25,5 +25,8 @@ $(document).ready(function() {
 	if ( $(".tel-copy").length ) { 
 		var clipboard = new Clipboard(".tel-copy");
 	};	
+
+	// Bootstrap Modal
+	$("#login-drop").modal();
     
 });

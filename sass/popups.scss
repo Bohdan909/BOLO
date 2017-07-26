@@ -524,3 +524,34 @@ body.popup-open {
         }
     }
 }
+
+// Modal Reset
+.modal-open {
+    padding-right: 0 !important;
+    overflow-y: auto !important;
+}
+
+.modal {
+    padding-right: 0 !important;
+}
+
+.modal.fade {
+    opacity: 1 !important;
+}
+
+.modal-backdrop {
+    display: none !important;
+}
+
+.modal-bg:after {
+    @extend .ps;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    
+}
