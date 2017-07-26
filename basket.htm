@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<title>Bolo.Cases - Твой чехол на каждый день</title>
+		<meta name="viewport" content="width=1250, initial-scale=-1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  />
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+		
+        <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+	</head>
+	
+	<body>		
+		<div id="main">
+			
+			<!-- Header -->
+			<header id="header" class="is-fixed"> 
+				<div class="header-top">
+					<div class="socket">
+						<div class="info-block tel">
+							<div class="drop-item">
+								<span>
+									<i  class="tel-copy tooltip" 
+										title="Скопировать номер"
+										data-clipboard-action="copy" 
+										data-clipboard-target="#tel-1"
+									></i>
+									<em id="tel-1">+38 (044) 338-38-08</em>
+								</span>
+								<div class="drop">
+									<span>
+										<i  class="tel-copy tooltip" 
+											title="Скопировать номер"
+											data-clipboard-action="copy" 
+											data-clipboard-target="#tel-2"
+										></i>
+										<em id="tel-2">+38 (050) 814-94-45</em>
+									</span>
+									<span>
+										<i  class="tel-copy tooltip" 
+											title="Скопировать номер"
+											data-clipboard-action="copy" 
+											data-clipboard-target="#tel-3"
+										></i>
+										<em id="tel-3">+38 (096) 909-12-12</em>
+									</span>
+								</div>
+							</div>
+							<div>Пн-Пт , с 9:00 до 18:00</div>
+						</div>
+
+						<div class="logo-wrap">
+							<a  class="logo" href="index.htm">
+								<img src="images/logo.gif" alt="logo">
+							</a>
+							<span>Твой чехол на каждый день</span>
+						</div>
+
+						<div class="header-items">
+							<div class="items-wrap">
+								<a class="items fav" href="fav.htm">
+									<div>0</div>
+								</a>
+							</div>
+
+							<div class="items-wrap">
+								<a id="header-basket-b" class="items bkt" href="#">
+									<div>0</div>
+								</a>
+
+								<div class="header-items-drop header-basket">
+									<div class="header-drop-hold">Ваша корзина пустая</div>
+									<div class="header-drop-products">
+										
+									</div>
+
+									<a href="basket.htm" class="btn">
+										<span>Перейти в корзину</span>
+									</a>
+
+									<div class="header-drop-count">
+										<span class="count-items">0</span> 
+										товара на сумму 
+										<span class="count-price">0</span> 
+										грн.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>		
+				</div>
+
+				<div class="header-menu">
+					<nav class="menu">
+						<ul>
+							<li><a href="catalogue.htm">каталог</a></li>
+							<li><a href="case_name.htm">именные чехлы</a></li>
+							<li><a href="case_photo.htm">чехлы с фото</a></li>
+							<li><a href="share.htm">акция 1+1=3</a></li>
+							<li><a href="feedback.htm">отзывы</a></li>
+							<li><a href="faq.htm">частые вопросы</a></li>
+							<li><a href="create.htm">создать свой чехол</a></li>
+						</ul>
+					</nav>
+				</div>
+				
+			</header><!-- / Header -->
+			
+			<!-- Content -->
+			<div id="content" class="socket">
+				<ul class="breadcrumbs animate-item fade">
+			    	<li><a href="">Главная страница</a></li>
+			    	<li>Оформления заказа</li>
+			    </ul>    
+				
+				<hgroup class="title-wrap animate-item fade" data-screen="1">
+			    	<div class="title">Оформления заказа</div>
+			    	<div class="title-s">
+			    		Все поля обязательные для заполнения
+			    	</div>
+				</hgroup>
+				
+				<!-- Basket Order Wrap -->
+				<div class="basket-order-wrap clearfix">
+
+					<!-- Left Column -->
+					<div class="left-column">
+						<div class="block widget-block animate-item move">
+							<div class="title-2">Заполните личные данные</div>
+							<div class="title-s">Заполните все поля</div>
+
+							<div class="form-input-r">
+								<label>Имя и Фамилия</label>
+								<input type="text">
+							</div>
+
+							<div class="form-input-cols">
+								<div class="form-input-r">
+									<label>E-mail</label>
+									<input type="email">
+								</div>
+
+								<div class="form-input-r">
+									<input class="mask" type="tel" 
+										placeholder="+38 (0__) ___-__-__">
+								</div>
+							</div>
+						</div>
+
+						<div class="block widget-block animate-item move" data-q="1">
+							<div class="title-2">Способ доставки</div>
+							<div class="title-s">Выбирите способ доставки</div>
+							
+							<div class="radio-tabs checkbox-list">
+								<label class="radio-tab checkbox-item">
+									<input class="tab1" type="radio" name="radio-tab" data-id="radio-tab1">
+									<div class="checkbox"></div>
+									<div class="checkbox-text-m">
+										Новая почта
+									</div>
+								</label>
+
+								<label class="radio-tab checkbox-item">
+									<input type="radio" name="radio-tab" data-id="radio-tab2">
+									<div class="checkbox"></div>
+									<div class="checkbox-text-m">
+										Самовывоз
+									</div>
+								</label>
+							
+								<label class="radio-tab checkbox-item">
+									<input type="radio" name="radio-tab" data-id="radio-tab3">
+									<div class="checkbox"></div>
+									<div class="checkbox-text-m">
+										Курьерская доставка на дом
+									</div>
+								</label>
+							</div>
+							
+							<div class="tab-wrap">
+								<div class="tab" id="radio-tab1">
+									<div class="widget-dl-data">
+										<div class="title-2">Данные для доставки</div>
+										<div class="title-s">
+											Стоимость доставки составляет : 
+											<span>35 грн.</span>
+										</div>
+
+										<div class="form-input-cols">
+											<div class="form-input-r">
+												<label>Город</label>
+												<input type="text">
+											</div>
+
+											<div class="form-input-r">
+												<label>Номер склада</label>
+												<input type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="tab" id="radio-tab2">
+									<div class="widget-dl-data">
+										<div class="title-2">Данные для самовывоза</div>
+										<div class="title-s">
+											Наш адрес: 			
+										</div>
+										<address>
+											<span>г. Киев</span>
+											<span>ул. Хрещатик, д. 15</span>
+											<span>тед. 8 (050) 134-02-77</span>
+										</address>
+									</div>
+								</div>
+
+								<div class="tab" id="radio-tab3">
+									<div class="widget-dl-data">
+										<div class="title-2">Данные для доставки</div>
+										<div class="title-s">
+											Стоимость доставки составляет : 
+											<span>0 грн.</span>
+										</div>
+
+										<div class="form-input-cols">
+											<div class="form-input-r">
+												<label>Город</label>
+												<input type="text">
+											</div>
+
+											<div class="form-input-r">
+												<label>Адрес</label>
+												<input type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+
+						<div class="block widget-block animate-item move" data-q="2">
+							<div class="title-2">Способ оплаты</div>
+							<div class="title-s">Выбирите способ оплаты </div>
+
+							<div class="checkbox-list">
+								<label class="checkbox-item">
+									<input type="radio" name="p">
+									<div class="checkbox"></div>
+									<div class="checkbox-text-m">
+										Наличными в момент доставки
+									</div>
+								</label>
+
+								<label class="checkbox-item">
+									<input type="radio" name="p">
+									<div class="checkbox"></div>
+									<div class="checkbox-text-m">
+										Предоплата на карту Приват банка
+									</div>
+								</label>
+							</div>	
+						</div>	
+					</div>
+					
+					<!-- Right Column -->
+					<div class="right-column">
+
+						<div class="basket-order-block block animate-item move" data-q="1">
+							<div class="basket-order-item">
+								<div class="basket-cell-img">
+									<i class="remove hide-item"></i>
+									<img src="images/prod-1.jpg" alt="">
+								</div>
+								<div class="basket-cell-name">
+									<div class="price-e">
+										<span>
+											<a href="#">iPhone 6,  Autumn</a>
+										</span>
+										<div class="price">
+											199 грн.
+										</div>
+									</div>
+								</div>
+								<div class="basket-cell-items">
+									<div class="product-items">
+										<div class="circ minus"></div>
+										<div class="circ plus"></div>
+										<input type="number" value="1">
+									</div>
+								</div>
+								<div class="basket-cell-sum">
+									<div class="price-e">
+										<span>
+											Сумма :
+										</span>
+										<div class="price">
+											199 грн.
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="basket-order-item">
+								<div class="basket-cell-img">
+									<i class="remove hide-item"></i>
+									<img src="images/prod-2.jpg" alt="">
+								</div>
+								<div class="basket-cell-name">
+									<div class="price-e">
+										<span>
+											<a href="#">iPhone 6,  Hearts</a>
+										</span>
+										<div class="price">
+											60 грн.
+										</div>
+									</div>
+								</div>
+								<div class="basket-cell-items">
+									<div class="product-items">
+										<div class="circ minus"></div>
+										<div class="circ plus"></div>
+										<input type="number" value="1">
+									</div>
+								</div>
+								<div class="basket-cell-sum">
+									<div class="price-e">
+										<span>
+											Сумма :
+										</span>
+										<div class="price">
+											60 грн.
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="basket-order-btm clearfix">
+								<section>
+									<div class="title-2">Общая сумма заказа</div>
+									<p>
+										На заказы от трех чехлов, сумма будет пересчитана с учетом акции 1+1=3 при подтверждении заказа по телефону
+									</p>
+								</section>
+
+								<div class="price-e">
+									<span>Сумма:</span>
+									<div class="price">
+										851 грн.
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-wrap-right animate-item">
+							<a class="btn btn-b btn-g move" href="catalogue.htm" data-q="2">
+								Вернуться в каталог
+							</a>
+							<a class="btn btn-b move" data-q="3" href="basket_finish.htm">
+								<span>Оформить заказ</span>
+							</a>
+						</div>
+					</div>
+
+				</div><!-- / Basket Order Wrap -->
+				
+				
+
+				<!-- Present Case -->
+				<div class="present-case-wrap">
+					<hgroup class="title-wrap animate-item move" data-screen="1">
+				    	<div class="title">Выбирите бесплатно один чехол!</div>
+				    	<div class="title-s">
+				    		Купите 2 чехла и выбирайте любой 
+				    	</div>
+					</hgroup>
+
+					<div class="clearfix">
+						<div class="timer-block block animate-item move" data-screen="0.7">
+							<div class="title-2">Заберите подарок!</div>
+							<div class="title-s">Выбирите чехол за 20 минут</div>
+							
+							<div class="timer">
+								<div id="progress-circle"></div>
+								<div id="time">
+									<span class="minutes">00</span> 
+									<span class="blink">:</span> 
+									<span class="seconds">10</span>
+								</div>
+							</div>
+
+							<p>
+								По истечению времени, <br>
+								акция к сожалению прекратиться
+							</p>
+						</div>
+
+						<div class="product-block block animate-item move" data-q="1">
+			    			<a class="img" href="">
+			    				<img src="images/prod-3.jpg" alt="">
+			    			</a>
+			    			<a class="prod-name" href="">love you</a>
+			    			<div class="desc">Чехол для iPhone 6</div>	
+			    			<div class="prod-btm">
+			    				<div class="price">456 грн.</div>
+			    			</div>
+
+			    			<div class="circ plus animate-item move" data-q="3"></div>
+			    		</div>
+
+			    		<div class="product-block block animate-item move" data-q="2">
+			    			<a class="img" href="">
+			    				<img src="images/prod-2.jpg" alt="">
+			    			</a>
+			    			<a class="prod-name" href="">hearts</a>
+			    			<div class="desc">Чехол для iPhone 6</div>	
+			    			<div class="prod-btm">
+			    				<div class="price">131 грн.</div>
+			    			</div>
+
+			    			<div class="circ eq animate-item move" data-q="5"></div>
+			    		</div>
+
+			    		<div class="product-block block animate-item move" data-q="3">
+			    			<a class="img" href="">
+			    				<img src="images/maket.gif" alt="">
+			    			</a>
+			    			<a class="prod-name" href="">ВАШ бесплатный чехол</a>
+			    			<div class="desc">Выберите любой чехол из каталога</div>	
+			    			<div class="btn-wrap">
+			    				<a href="" class="btn btn-b">
+			    					<span>Выбрать чехол</span>
+			    				</a>
+			    			</div>
+			    		</div>
+
+
+					</div>
+				</div><!-- / Present Case -->
+
+			</div><!-- / Content -->	
+
+			
+		</div><!-- / Main -->
+
+		<!-- Footer -->
+		<footer id="footer" class="animate-item fade" data-screen="0.3">	
+			<div class="footer">
+				<div class="footer-top">
+					<a class="info-block st" target="_blank" href="https://goo.gl/maps/xeaMWxbuXrq">
+						<div>Ул. Татарская 3/2 , Киев, Украина</div>
+						<div>Пн-Пт , с 9:00 до 18:00</div>
+					</a>
+
+					<div class="info-block ml">
+						<div>Наш е-мейл</div>
+						<div><a href="">bolo.cases@gmail.com</a></div>
+					</div>
+
+					<ul class="social">
+						<li class="ico-1"><a href=""></a></li>
+						<li class="ico-2"><a href=""></a></li>
+						<li class="ico-3"><a href=""></a></li>
+					</ul>
+				</div>
+
+				<div class="footer-btm">
+					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»</div>
+					<div class="partners">
+						<a href=""><img src="images/part-1.jpg" alt=""></a>
+						<a href=""><img src="images/part-2.jpg" alt=""></a>
+						<a href=""><img src="images/part-3.jpg" alt=""></a>
+						<a href=""><img src="images/part-4.jpg" alt=""></a>
+					</div>
+					<div class="rights">Все права защищены</div>
+				</div>
+			</div>
+		</footer><!-- / Footer -->
+		
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+
+        
+		<!-- Scripts -->
+		<script src="./js/modernizr-custom.js"></script>
+        <script src="./js/jquery.maskedinput.min.js"></script>
+		<script src="./js/tooltipsy.min.js"></script> 
+		<script src="./js/clipboard.min.js"></script>
+		<script src="./js/scripts.js"></script> 
+        <script src="./js/plugins.js"></script> 
+		
+		<!-- Timer -->
+		<script src="./js/progressbar.min.js"></script>
+        <script>
+        	window.onload = function(){
+
+        		// Progress Circle
+			    var circle = new ProgressBar.Circle('#progress-circle', {
+			        color: '#2bcfca',
+			        //duration: 1200000,
+			        duration: 10000,
+			        easing: 'linear',
+			        strokeWidth: 7
+			    });
+
+			    circle.animate(1);
+
+			    // Timer
+			    var remain = 10; 
+				function timer(timestamp){
+				    if (timestamp < 0) timestamp = 0;
+				 
+				    var mins = Math.floor((timestamp)/60);
+				    var secs = Math.floor(timestamp - mins*60); 				 
+				 
+				    if (String(mins).length > 1)
+				        $('span.minutes').text(mins);
+				    else
+				        $('span.minutes').text("0" + mins);
+				    if (String(secs).length > 1)
+				        $('span.seconds').text(secs);
+				    else
+				        $('span.seconds').text("0" + secs);
+				}
+				 
+				$(document).ready(function(){
+				    setInterval(function(){
+				        remain = remain - 1;
+				        timer(remain);
+
+				        if (remain <= 0){
+				            //console.log("end");
+				        }
+				    }, 1000);
+				});
+
+			}
+        </script>
+		
+		<!-- Live Reload -->
+		<script src="http://localhost:35729/livereload.js"></script>
+
+		<!-- Perfect Markup -->
+		<script type="text/javascript" src="perfect_markup.user.js"></script>
+	</body>
+</html>

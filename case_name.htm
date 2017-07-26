@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<title>Bolo.Cases - Твой чехол на каждый день</title>
+		<meta name="viewport" content="width=1250, initial-scale=-1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  />
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+		
+        <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/keyboard.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+	</head>
+	
+	<body>		
+		<div id="main">
+			
+			<!-- Header -->
+			<header id="header" class="is-fixed"> 
+				<div class="header-top">
+					<div class="socket">
+						<div class="info-block tel">
+							<div class="drop-item">
+								<span>
+									<i 
+										class="tel-copy tooltip" 
+										title="Скопировать номер"
+										data-clipboard-action="copy" 
+										data-clipboard-target="#tel-1"
+									></i>
+									<em id="tel-1">+38 (044) 338-38-08</em>
+								</span>
+								<div class="drop">
+									<span>
+										<i 
+											class="tel-copy tooltip" 
+											title="Скопировать номер"
+											data-clipboard-action="copy" 
+											data-clipboard-target="#tel-2"
+										></i>
+										<em id="tel-2">+38 (050) 814-94-45</em>
+									</span>
+									<span>
+										<i 
+											class="tel-copy tooltip" 
+											title="Скопировать номер"
+											data-clipboard-action="copy" 
+											data-clipboard-target="#tel-3"
+										></i>
+										<em id="tel-3">+38 (096) 909-12-12</em>
+									</span>
+								</div>
+							</div>
+							<div>Пн-Пт , с 9:00 до 18:00</div>
+						</div>
+
+						<div class="logo-wrap">
+							<a  class="logo" href="index.htm"><img src="images/logo.gif" alt="logo"></a>
+							<span>Твой чехол на каждый день</span>
+						</div>
+
+						<div class="header-items">
+							<div class="items-wrap">
+								<a class="items fav" href="fav.htm">
+									<div>0</div>
+								</a>
+							</div>
+
+							<div class="items-wrap">
+								<a id="header-basket-b" class="items bkt" href="#">
+									<div>0</div>
+								</a>
+
+								<div class="header-items-drop header-basket">
+									<div class="header-drop-hold">Ваша корзина пустая</div>
+									<div class="header-drop-products">
+										
+									</div>
+
+									<a href="basket.htm" class="btn">
+										<span>Перейти в корзину</span>
+									</a>
+
+									<div class="header-drop-count">
+										<span class="count-items">0</span> 
+										товара на сумму 
+										<span class="count-price">0</span> 
+										грн.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>		
+				</div>
+
+				<div class="header-menu">
+					<nav class="menu">
+						<ul>
+							<li><a href="catalogue.htm">каталог</a></li>
+							<li class="is-current">
+								<a href="case_name.htm">именные чехлы</a>
+							</li>
+							<li><a href="case_photo.htm">чехлы с фото</a></li>
+							<li><a href="share.htm">акция 1+1=3</a></li>
+							<li><a href="feedback.htm">отзывы</a></li>
+							<li><a href="faq.htm">частые вопросы</a></li>
+							<li><a href="create.htm">создать свой чехол</a></li>
+						</ul>
+					</nav>
+				</div>
+				
+			</header><!-- / Header -->
+			
+			<!-- Content -->
+			<div id="content">
+				<div class="socket">
+					<ul class="breadcrumbs animate-item fade">
+				    	<li><a href="">Главная страница</a></li>
+				    	<li>Чехлы с фото</li>
+				    </ul>    
+					
+					<hgroup class="title-wrap title-wrap-center animate-item fade">
+				    	<div class="title">Как легко сделать именной чехол?</div>
+				    	<div class="title-s">Напишите то, что хотите увидеть на чехле</div>
+					</hgroup>
+					
+					<!-- Name Case -->
+					<div class="name-case-wrap clearfix animate-item">
+						<div class="phone-side">
+							<div class="phone-mdl-wrap move">
+								<div id="c-1" class="phone-mdl mdl-1"></div>
+								<div id="c-2" class="phone-mdl mdl-2"></div>
+								<div id="phone-text"></div>
+							</div>
+
+							<div class="circles scale-in">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+
+							<div class="color-select move" data-q="1">
+								<div class="color-lbl">Выбрать цвет :</div>
+								<label class="color-item">
+									<input data-val="1" 
+									       type="radio"  
+										   name="phone-color"
+										   checked
+									>
+									<div class="color-c color-1"><i></i></div>
+								</label>
+
+								<label class="color-item">
+									<input 
+										data-val="2" 
+										type="radio" 
+										name="phone-color"
+									>
+									<div class="color-c color-2"><i></i></div>
+								</label>
+							</div>
+						</div>
+
+						<div class="keyboard-side">
+							<div class="keyboard move" data-q="2">
+								<div class="bksp">стереть букву</div>
+								<input id="keyboard-text" type="text">
+							</div>
+							<div class="btn-wrap-center">
+								<button class="btn btn-b btn-create move" data-q="3">
+									<span>Создать свой именной чехол</span>
+								</button>
+								<a class="btn btn-b btn-bdr-2 move" href="faq.htm" data-q="4">
+									Есть вопросы?
+								</a>
+							</div>
+						</div>
+					</div><!-- / Name Case -->
+					
+					<!-- Features -->
+					<div class="features-wrap animate-item">
+						<hgroup class="title-wrap title-wrap-center move">
+					    	<div class="title">Особенности именных чехлов</div>
+					    	<div class="title-s">
+					    		Здесь собраны 6 ключевых особенностей именных чехлов
+					    	</div>
+						</hgroup>
+	
+						<div class="features-block">
+							<div class="phone-mkt move" data-q="1">
+								<img src="images/share-img.png" alt="">
+								<div class="circles scale-in">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+
+							<div class="features-columns">
+
+								<!-- Left Column -->
+								<div class="column">
+									<div class="pnl-block block move"
+									     data-q="2"
+									>
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-01.gif" alt="" >
+											<div>фирменная упаковка</div>
+											<span>Защита от повреждений</span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+
+									<div class="pnl-block block move" 
+									     data-q="3"
+									>
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-02.gif" alt="" >
+											<div>моментальное производство</div>
+											<span>от 1 до 3 дней</span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+
+									<div class="pnl-block block move" 
+										 data-q="4"
+									>
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-03.gif" alt="" >
+											<div>разные цвета</div>
+											<span>Все цвета радуги</span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Right Column -->
+								<div class="column">
+									<div class="pnl-block block move"
+									     data-q="3"
+									>
+
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-04.gif" alt="" >
+											<div>Тонкий и очень легкий</div>
+											<span>Толщина 1,5 мм </span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+
+									<div class="pnl-block block move" 
+									     data-q="4"
+									>
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-05.gif" alt="" >
+											<div>не царапется и не выгорает</div>
+											<span>Защитная пленка</span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+
+									<div class="pnl-block block move" 
+										 data-q="5"
+									>
+										<div class="prod-desc-item">
+											<img class="ico" src="images/ico-f-06.gif" alt="" >
+											<div>Профф. оборудывание</div>
+											<span>Европейские машинки</span>
+										</div>
+
+										<div class="desc-tooltip">
+											<p>
+												Толщина всего в 1,5 мм практически не увеличивает размеры вашего устройства, а вес и вовсе не заметен.
+											</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="btn-wrap-center">
+								<button class="btn btn-b btn-create move" data-q="6">
+									<span>Создай меня!</span>
+								</button>
+								<a class="btn btn-b btn-bdr-2 move" href="faq.htm" data-q="7">
+									Есть вопросы?
+								</a>
+							</div>
+						</div>
+					</div><!-- / Features -->
+
+					<!-- Video Answer -->
+					<div class="video-answer-wrap border-top animate-item" data-screen="0.7">
+						<hgroup class="title-wrap title-wrap-center move">
+					    	<div class="title">Видео ответы</div>
+					    	<div class="title-s">
+					    		Посмотрите как выглядит готовый именной чехол
+					    	</div>
+						</hgroup>
+
+						<div class="video-answer-block">
+							<div class="video-answer-item move" data-q="1">
+								<div class="video">
+									<video>
+										<source type="video/mp4" src="video/putting_on_a_case.mp4" loop>
+									</video>
+									<div class="btn-play"></div>
+								</div>
+								<div class="title-n">
+									Пластиковые чехлы
+								</div>
+								<div class="title-s">
+									Как производятся пластиковые чехлы?
+								</div>
+							</div>
+
+							<div class="video-answer-item move" data-q="2">
+								<div class="video">
+									<video>
+										<source type="video/mp4" src="video/putting_on_a_case.mp4" loop>
+									</video>
+									<div class="btn-play"></div>
+								</div>
+								<div class="title-n">
+									Проблемы с переобувкой телефона
+								</div>
+								<div class="title-s">
+									Не можете надеть чехол?
+								</div>
+							</div>
+
+							<div class="video-answer-item move" data-q="3">
+								<div class="video">
+									<video>
+										<source type="video/mp4" src="video/putting_on_a_case.mp4" loop>
+									</video>
+									<div class="btn-play"></div>
+								</div>
+								<div class="title-n">
+									Пластиковые чехлы
+								</div>
+								<div class="title-s">
+									Как производятся пластиковые чехлы?
+								</div>
+							</div>
+						</div>
+
+						
+					</div><!-- / Video Answer -->
+
+				</div><!-- / Socket -->
+				
+				<!-- Instagram -->
+				<div class="instagram-widget-wrap">
+					<hgroup class="title-wrap title-wrap-center animate-item move">
+				    	<div class="title">
+				    		Фото именных чехлов
+				    	</div>
+				    	<div class="title-s">
+				    		Наши клеинты с именными чехлами
+				    	</div>
+					</hgroup>
+
+					<div class="instagram-widget animate-item fade" 
+						 data-screen="0.5" 
+						 data-q="2"
+					>
+						<div class="instagram-side left">
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-01.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-02.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-03.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-04.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-04.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-03.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-02.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-01.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="instagram-center">
+							<div class="img">
+								<img src="images/ins-center.jpg" alt="">
+							</div>
+
+							<div class="instagram-t move" data-q="1">
+								<div>НАШ ИНСТАГРАМ</div>
+								<span>923 фотографии</span>
+							</div>
+						</div>
+
+						<div class="instagram-side right">
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-05.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся со мной согласны именные смотрятся со мной согласны
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-06.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-07.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-08.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-07.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-08.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-05.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+							<div class="instagram-item">
+								<a href="#"><img src="images/ins-photo-06.jpg" alt=""></a>
+
+								<div class="feedback-tooltip">
+									<div class="title-m">Фотоотзыв</div>
+									<div class="user-name">@juliana983</div>
+									<p>
+										Силиконовые со мной согласны. Вы именные смотрятся :)
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- / Instagram -->
+				
+				<!-- How To Get -->
+				<div class="how-to-get-wrap animate-item socket">
+					<hgroup class="title-wrap title-wrap-center move">
+				    	<div class="title">
+				    		Как получить бесплатно чехол?
+				    	</div>
+				    	<div class="title-s">
+				    		Всего три простых шага
+				    	</div>
+					</hgroup>
+
+					<ul class="how-to-get clearfix animate-item">
+						<li class="move" data-q="1">
+							<div class="num">01</div>
+							<div class="points fade" data-q="5">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+							</div>
+							<div class="info-block info-c enter">
+								<div>Зайдите в каталог</div>
+								<div>Выбирите любые три чехла</div>
+							</div>
+
+							<a class="btn btn-cat move" data-q="2" href="catalogue.htm">
+								<span>Зайти в каталог</span>
+							</a>
+						</li>
+						<li class="move" data-q="2">
+							<div class="num">02</div>
+							<div class="points fade" data-q="5">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+							</div>
+							<div class="info-block info-c order">
+								<div>Зайдите в каталог</div>
+								<div>Выбирите любые три чехла</div>
+							</div>
+						</li>
+						<li class="move" data-q="3">
+							<div class="num">03</div>
+							<div class="points fade" data-q="5">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+							</div>
+							<div class="info-block info-c get">
+								<div>Зайдите в каталог</div>
+								<div>Выбирите любые три чехла</div>
+							</div>
+						</li>
+					</ul>
+				</div><!-- / How To Get -->
+
+			</div><!-- / Content -->
+		</div><!-- / Main -->
+
+
+		<!-- Footer -->
+		<footer id="footer" class="animate-item fade" data-screen="0.3">	
+			<div class="footer">
+				<div class="footer-top">
+					<a class="info-block st" target="_blank" href="https://goo.gl/maps/xeaMWxbuXrq">
+						<div>Ул. Татарская 3/2 , Киев, Украина</div>
+						<div>Пн-Пт , с 9:00 до 18:00</div>
+					</a>
+
+					<div class="info-block ml">
+						<div>Наш е-мейл</div>
+						<div><a href="">bolo.cases@gmail.com</a></div>
+					</div>
+
+					<ul class="social">
+						<li class="ico-1"><a href=""></a></li>
+						<li class="ico-2"><a href=""></a></li>
+						<li class="ico-3"><a href=""></a></li>
+					</ul>
+				</div>
+
+				<div class="footer-btm">
+					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»</div>
+					<div class="partners">
+						<a href=""><img src="images/part-1.jpg" alt=""></a>
+						<a href=""><img src="images/part-2.jpg" alt=""></a>
+						<a href=""><img src="images/part-3.jpg" alt=""></a>
+						<a href=""><img src="images/part-4.jpg" alt=""></a>
+					</div>
+					<div class="rights">Все права защищены</div>
+				</div>
+			</div>
+		</footer><!-- / Footer -->
+		
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+		<!-- Scripts -->
+		<script src="./js/modernizr-custom.js"></script>
+        <script src="./js/jquery.maskedinput.min.js"></script>
+		<script src="./js/tooltipsy.min.js"></script> 
+		<script src="./js/clipboard.min.js"></script>
+		<script src="./js/scripts.js"></script> 
+        <script src="./js/plugins.js"></script> 
+
+        <!-- Keyboard -->
+		<script src="./js/jquery.keyboard.js"></script>
+		<script>
+			$(function(){
+				$("#keyboard-text").keyboard({ 
+					keyBinding: 'mousedown touchstart',
+					layout: "custom",
+					maxLength: 10,
+					alwaysOpen: true,
+					autoAccept: true,
+					initialFocus: false,
+					appendLocally: true,
+
+					customLayout: {
+						'default': [
+					      '{bksp}',
+					      'q w e r t y u i o p',
+					      'a s d f g h j k l',
+					      'z x c v b n m'
+					    ]
+					},
+
+					change: function(){
+						var value = $(".ui-keyboard-preview").val();
+
+			            $("#phone-text").text(value);
+			        }
+				});
+
+				// Only Latin 
+				$(".ui-keyboard-preview").keypress(function(event) {
+			        if (!((event.which >= 65 && event.which <= 90) ||
+			           (event.which >= 97 && event.which <= 122))) {
+			            event.preventDefault();
+			        }
+			    }); 
+			
+
+			});
+		</script>
+
+		<!-- Video -->
+		<script>
+			$(document).ready(function() {       
+		        $(".video").each(function(i) {
+		            $(this).on("mouseover", function() { hoverVideo(i); });
+		            $(this).on("mouseout", function() { hideVideo(i); });
+		        });
+			});
+
+			function hoverVideo(i){  
+                $("video")[i].play(); 
+	        }
+
+	        function hideVideo(i){
+	            $("video")[i].pause(); 
+	        }
+
+	        // Only Demo
+	        $("video").each(function(){
+	        	$(this).css({ "width":"522px" });
+	        });
+		</script>
+
+		<!-- Live Reload -->
+		<script src="http://localhost:35729/livereload.js"></script>
+
+		<!-- Perfect Markup -->
+		<script type="text/javascript" src="perfect_markup.user.js"></script>
+	</body>
+</html>
