@@ -45,7 +45,15 @@ document.documentElement.className = document.documentElement.className.replace(
             $sLabel.removeClass("is-active");
             $this.toggleClass("is-active");
 
-            ( $this.is(":last-child") ) ? $this.parent().addClass("other") : $this.parent().removeClass("other");
+            if ( $this.is(":last-child") ) {
+                $this.parent().addClass("other");
+                $("#ios").hide();
+                $("#other").show().perfectScrollbar("update");
+            }  else { 
+                $this.parent().removeClass("other");
+                $("#ios").show();
+                $("#other").hide();
+            }
         });
 
         // Category BG
@@ -677,6 +685,19 @@ document.documentElement.className = document.documentElement.className.replace(
                 }
             }
         }());
+
+        // History Toggle
+        (function(){
+            $(".history-row-toggle").on("click", function(){
+                var $wrap = $(this).parents(".history-row-wrap");
+
+                $wrap.toggleClass("is-open").find(".history-row-drop").slideToggle(250);
+            });
+        }());
+
+
+
+        
         
 
         windowSize();   

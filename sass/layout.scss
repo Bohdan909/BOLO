@@ -445,7 +445,7 @@ a.info-block div:first-child:hover {
     width: auto;
 }
 
-.cabinet-login {
+.cabinet-l {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
@@ -461,8 +461,11 @@ a.info-block div:first-child:hover {
     }
     
     span {
+        display: inline-block;
         text-decoration: underline;
         text-transform: uppercase;
+        white-space: nowrap;
+        max-width: 150px;
         font-size: 16px;
         line-height: 23px;
         color: $col-f-d;
@@ -755,7 +758,7 @@ a.info-block div:first-child:hover {
     padding: 30px 15px 32px 25px;
 
     .title-2 {
-        margin-bottom: 9px;
+        margin-bottom: 7px;
         line-height: 30px;
     }
 

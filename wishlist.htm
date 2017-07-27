@@ -14,7 +14,7 @@
 		<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
 		
         <link type="text/css" rel="stylesheet" href="css/normalize.css" />
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+         <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 		<link type="text/css" rel="stylesheet" href="css/main.css" />
 	</head>
@@ -97,7 +97,7 @@
 							</div>
 
 							<div class="header-cabinet-wrap">
-								<button class="cabinet-login" type="button" data-toggle="modal" data-target="#cabinet-drop">
+								<button class="cabinet-l" type="button" data-toggle="modal" data-target="#cabinet-login">
 									<span>Войти</span>
 								</button>
 
@@ -135,158 +135,120 @@
 			</header><!-- / Header -->
 			
 			<!-- Content -->
-			<div id="content" class="socket cabinet-content">
-				
+			<div id="content" class="socket">
+				<ul class="breadcrumbs animate-item fade">
+			    	<li><a href="index.htm">Главная страница</a></li>
+			    	<li>Каталог</li>
+			    	<li>Список желаний</li>
+			    </ul>    
 				
 				<hgroup class="title-wrap animate-item fade" data-screen="1">
-			    	<div class="title">Личный кабинет</div>
+			    	<div class="title">Мой список желаний</div>
+			    	<div class="title-s">
+			    		В вашем списке желаний 6 товаров
+			    	</div>
 				</hgroup>
-
-				<div class="cabinet-wrap tabs-wrap clearfix">
-
-					<div class="left-column">
-						<div class="block widget-block cabinet-column animate-item move" data-q="1">
-							<div class="cabinet-p-top">
-								<div class="title-2">Профиль</div>
-								<div class="title-s">Сергей Иванов</div>
-							</div>
-							<ul class="tabs">
-								<li data-tab="cab-tab1" class="is-current cabinet-point">
-									<span>Контакты</span>
-								</li>
-								<li data-tab="cab-tab2" class="cabinet-point">
-									<span>Доставка</span>
-								</li>
-								<li data-tab="cab-tab3" class="cabinet-point">
-									<span>Избранные</span>
-								</li>
-								<li data-tab="cab-tab4" class="cabinet-point">
-									<span>История</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="right-column">
-						<div id="cab-tab1" class="block widget-block tab-block is-show animate-item move" data-q="2">
-							<div class="title-3">Личные данные</div>
-
-							<form action="">
-								<div class="form-cabinet form-columns">
-									<div class="column">
-										<div class="form-input-r">
-											<label>ФИО</label>
-											<input type="text">
-										</div>
-										<div class="form-input-r">
-											<label>E-mail</label>
-											<input type="email">
-										</div>
-										<div class="form-input-r">
-											<label>Телефон</label>
-											<input type="tel">
-										</div>
-									</div>
-
-									<div class="column">
-										<select class="form-select selectpicker">
-											<option>Модель телефона</option>
-											<option>iPhone 5</option>
-											<option>iPhone 6</option>
-											<option>iPhone 6s</option>
-											<option>iPhone 7</option>
-										</select>
-
-										<div class="form-input-r with-link">
-											<label>Пароль</label>
-											<input type="password">
-											<a href="">Изменить</a>
-										</div>
-
-										<button class="btn btn-b" type="submit">
-											<span>Сохранить изменения</span>
-										</button>
-
-									</div>
-								</div>
-							</form>
-						</div>
-
-						<div id="cab-tab2" class="block widget-block tab-block animate-item move" data-q="2">
-							
-
-							<form action="">
-								<div class="form-cabinet form-columns">
-									<div class="column">
-										<div class="title-3">Личные данные</div>
-										<div class="form-input-r">
-											<label>Населенный пункт</label>
-											<input type="text">
-										</div>
-										<div class="form-input-r">
-											<label>Номер и адрес склада</label>
-											<input type="text">
-										</div>
-									</div>
-
-									<div class="column">
-										<div class="title-3">Доставка на дом</div>
-										<div class="form-input-r">
-											<label>Населенный пункт</label>
-											<input type="text">
-										</div>
-										<div class="form-input-r">
-											<label>Адрес дома и квартиры</label>
-											<input type="text">
-										</div>
-										
-									</div>
-								</div>
-
-								<button class="btn btn-b" type="submit">
-									<span>Сохранить изменения </span>
-								</button>
-							</form>
-						</div>
-
-						<div id="cab-tab3" class="block widget-block tab-block animate-item move" data-q="2">
-							
-
-							<div class="basket-order-item">
-								<div class="basket-cell-img">
-									<i class="remove hide-item"></i>
+				
+				<div class="columns-two">
+					<div class="column">
+						<div class="block product-panel animate-item move" data-q="1">
+							<button class="del"></button>
+							<div class="basket-product product">
+								<div class="img">
+									<i class="remove"></i>
 									<img src="images/prod-1.jpg" alt="">
 								</div>
-								<div class="basket-cell-name">
-									<div class="price-e">
-										<a href="" class="prod-name">girl’in’cap</a>
-										<div class="title-s">Чехол для iPhone 6</div>
-									</div>
+								<div class="basket-product-name">
+									<a href="">girl’in’cap</a>
 								</div>
-								<div class="basket-cell-items">
-									<div class="product-items">
-										<div class="circ minus"></div>
-										<div class="circ plus"></div>
-										<input type="number" value="1">
-									</div>
+								<div class="title-s">
+									Чехол для iPhone 6
 								</div>
-								<div class="basket-cell-sum">
-									<div class="price-e">
-										<div class="price">
-											199 грн.
-										</div>
-									</div>
-								</div>
-								<div class="basket-cell-to-bsk">
+							</div>
+
+							<div class="right-s">
+								<div class="price">238 грн.</div>
+								<div class="btn-to-basket">
 									<span class="btn-i bkt"></span>
 								</div>
 							</div>
+						</div>
 
+						<div class="block product-panel animate-item move" data-q="3">
+							<button class="del"></button>
+							<div class="basket-product product">
+								<div class="img">
+									<i class="remove"></i>
+									<img src="images/prod-1.jpg" alt="">
+								</div>
+								<div class="basket-product-name">
+									<a href="">girl’in’cap</a>
+								</div>
+								<div class="title-s">
+									Чехол для iPhone 6
+								</div>
+							</div>
+
+							<div class="right-s">
+								<div class="price">238 грн.</div>
+								<div class="btn-to-basket">
+									<span class="btn-i bkt"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="block product-panel animate-item move" data-q="2">
+							<button class="del"></button>
+							<div class="basket-product product">
+								<div class="img">
+									<i class="remove"></i>
+									<img src="images/prod-1.jpg" alt="">
+								</div>
+								<div class="basket-product-name">
+									<a href="">girl’in’cap</a>
+								</div>
+								<div class="title-s">
+									Чехол для iPhone 6
+								</div>
+							</div>
+
+							<div class="right-s">
+								<div class="price">238 грн.</div>
+								<div class="btn-to-basket">
+									<span class="btn-i bkt"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="block product-panel animate-item move" data-q="4">
+							<button class="del"></button>
+							<div class="basket-product product">
+								<div class="img">
+									<i class="remove"></i>
+									<img src="images/prod-1.jpg" alt="">
+								</div>
+								<div class="basket-product-name">
+									<a href="">girl’in’cap</a>
+								</div>
+								<div class="title-s">
+									Чехол для iPhone 6
+								</div>
+							</div>
+
+							<div class="right-s">
+								<div class="price">238 грн.</div>
+								<div class="btn-to-basket">
+									<span class="btn-i bkt"></span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				
-			
+				
+
 
 			</div><!-- / Content -->	
 
@@ -326,6 +288,108 @@
 				</div>
 			</div>
 		</footer><!-- / Footer -->
+
+		<!-- Popups -->
+		<div class="modal modal-bg fade" id="cabinet-login" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-p" role="document">
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+
+				<div class="title-2">Войти</div>
+				<form class="modal-form" action="">
+					<div class="form-input-r">
+						<label>E-mail</label>
+						<input type="email">
+					</div>
+
+					<div class="form-input-r">
+						<label>Пароль</label>
+						<input type="password">
+					</div>
+
+					<a class="link" href="">Забыли пароль ?</a>
+
+					<div class="social-login">
+						<span>Вход через соц.сеть</span>
+						<ul>
+							<li>
+								<a href=""><img src="images/sc-1.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-2.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-3.png" alt=""></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="buttons-btm">
+						<button class="btn btn-b btn-q">
+							<span>Войти</span>
+						</button>
+						<button class="btn btn-b btn-g btn-q" type="button" data-toggle="modal" data-target="#registration">
+							Регистрация
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal modal-bg fade" id="registration" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-p" role="document">
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+
+				<div class="title-2">Регистрация</div>
+
+				<form class="modal-form" action="">
+					<div class="form-input-r">
+						<label>ФИО</label>
+						<input type="text">
+					</div>
+
+					<div class="form-input-r">
+						<label>Номер телефона</label>
+						<input type="tel">
+					</div>
+
+					<div class="form-input-r">
+						<label>E-mail</label>
+						<input type="email">
+					</div>
+
+					<div class="form-input-r">
+						<label>Пароль</label>
+						<input type="password">
+					</div>
+
+					<div class="social-login">
+						<span>Вход через соц.сеть</span>
+						<ul>
+							<li>
+								<a href=""><img src="images/sc-1.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-2.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-3.png" alt=""></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="buttons-btm">
+						<button class="btn btn-b btn-q">
+							<span>Регистрация</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
 		
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
@@ -333,8 +397,7 @@
 
         
 		<!-- Scripts -->
-		<script src="./js/bootstrap.min.js"></script> 
-		<script src="./js/bootstrap-select.min.js"></script> 
+		<script src="./js/bootstrap.min.js"></script>
 		<script src="./js/modernizr-custom.js"></script>
         <script src="./js/jquery.maskedinput.min.js"></script>
 		<script src="./js/tooltipsy.min.js"></script> 
@@ -342,53 +405,7 @@
 		<script src="./js/scripts.js"></script> 
         <script src="./js/plugins.js"></script> 
 		
-		<!-- Timer -->
-		<script src="./js/progressbar.min.js"></script>
-        <script>
-        	window.onload = function(){
-
-        		// Progress Circle
-			    var circle = new ProgressBar.Circle('#progress-circle', {
-			        color: '#2bcfca',
-			        //duration: 1200000,
-			        duration: 10000,
-			        easing: 'linear',
-			        strokeWidth: 7
-			    });
-
-			    circle.animate(1);
-
-			    // Timer
-			    var remain = 10; 
-				function timer(timestamp){
-				    if (timestamp < 0) timestamp = 0;
-				 
-				    var mins = Math.floor((timestamp)/60);
-				    var secs = Math.floor(timestamp - mins*60); 				 
-				 
-				    if (String(mins).length > 1)
-				        $('span.minutes').text(mins);
-				    else
-				        $('span.minutes').text("0" + mins);
-				    if (String(secs).length > 1)
-				        $('span.seconds').text(secs);
-				    else
-				        $('span.seconds').text("0" + secs);
-				}
-				 
-				$(document).ready(function(){
-				    setInterval(function(){
-				        remain = remain - 1;
-				        timer(remain);
-
-				        if (remain <= 0){
-				            //console.log("end");
-				        }
-				    }, 1000);
-				});
-
-			}
-        </script>
+		
 		
 		<!-- Live Reload -->
 		<script src="http://localhost:35729/livereload.js"></script>

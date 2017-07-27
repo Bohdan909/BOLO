@@ -26,12 +26,17 @@ $(document).ready(function() {
 		var clipboard = new Clipboard(".tel-copy");
 	};	
 
-	// Bootstrap Modal
-	$("#login-drop").modal();
-
 	// Select
 	if ($(".selectpicker").length){
         $(".selectpicker").selectpicker();
     };
+
+    // Scroll
+    $(".scroll").length && $(".scroll").perfectScrollbar({
+        wheelSpeed: 0.5,
+        wheelPropagation: true,
+        minScrollbarLength: 20
+    }); 
+
     
 });

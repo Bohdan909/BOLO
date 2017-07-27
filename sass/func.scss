@@ -253,3 +253,9 @@ $headHeight: 137px;
 @mixin color-b($opacity){
     color: rgba(0,0,0, $opacity);
 }
+
+.text-head {
+    text-transform: uppercase;
+    font-family: $font-med;
+    color: $col-f-d;
+}

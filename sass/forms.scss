@@ -86,7 +86,7 @@ textarea {
 .form-input-r.with-link {
     padding-right: 85px;
 
-    > a {
+    > a, > .link {
         position: absolute;
         top: 0;
         right: 0;
@@ -94,6 +94,12 @@ textarea {
         font-size: 15px;
         line-height: 52px;
         color: $col-h;
+        text-align: left;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -470,7 +476,7 @@ $time-c-anim: 0.4s;
     @extend .trans;
 
     &:after {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -480,11 +486,11 @@ $time-c-anim: 0.4s;
 
 .btn-g {
     @extend .text;
-    background-color: #ebebeb;
-    color: $col-f-g;
+    background-color: #ebebeb !important;
+    color: $col-f-g !important;
 
     &:hover {
-        background-color: #dcdada;
+        background-color: #dcdada !important;
     }
 }
 
@@ -512,7 +518,20 @@ $time-c-anim: 0.4s;
     color: $col-f-g;
 }
 
+.btn-q {
+    border-radius: 0px !important;
+    -ms-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+
+    &:after {
+        border-radius: 0px !important;
+        -ms-border-radius: 0px !important;
+        -webkit-border-radius: 0px !important;
+    }
+}
+
 .btn-wrap {
+
     .btn {
         margin-right: 8px;
     }

@@ -874,6 +874,7 @@ button.btn-s {
 
         img {
             height: 92px;
+            max-width: 95%;
         }
         
         i.remove {
@@ -942,7 +943,11 @@ button.btn-s {
 
     a {
         text-decoration: none;
-        color: $col-f-g;
+        color: $col-f-d;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -2019,13 +2024,27 @@ button.btn-s {
     }
 }
 
-.phone-list {
+.phone-list-bg {
     width: 1050px;
+    height: 508px;
     margin: auto;
     background-color: #fff;
     box-shadow: 0px 10px 11px 0px rgba(46, 102, 131, 0.09);
     -webkit-box-shadow: 0px 10px 11px 0px rgba(46, 102, 131, 0.09);
 }
+
+.phone-list {
+    overflow: hidden;
+    height: 508px;
+
+    &#other {
+        display: none;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+
 
 .phone-item {
     @include transition(all, 0.4s, ease);
@@ -2117,6 +2136,73 @@ button.btn-s {
         width: 89px;
     }
 }
+
+// Phone Table
+.phone-mod-table {
+    @include flex(space-between);
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    background:#fff;
+}
+
+.phone-mod-block {
+    width: 50%;
+    border-right: 1px solid $col-bor;
+
+    &:nth-child(even) {
+        border: none;
+    }
+}
+
+.phone-mod-head {
+    @include clearfix;
+    height: 60px;
+    padding: 26px 25px 0 35px;
+    background-color: #f0f3f4;
+
+    .phone-mod-name {
+        @extend .text-head;
+        float: left;
+    }
+
+    .phone-mod-price {
+        float: right;
+        font-size: 15px;
+    }   
+}
+
+.phone-mod-cols {
+    @include flex(space-between);
+    align-content: stretch;
+    -webkit-align-content: stretch;
+    height: calc(100% - 60px);
+
+    .phone-mod-col {
+        flex-basis: auto;
+        flex-grow: 1;
+        width: 50%;
+        padding-top: 26px;
+        padding-left: 35px;
+        padding-bottom: 15px;
+
+        &:first-child {
+            border-right: 1px solid $col-bor;
+        }
+    }
+}
+
+.phone-mod-item {
+    font-size: 15px;
+    margin-bottom: 13px;
+}
+
+/* ----------------
+    Perfect Scroll
+    --------------- */
+
+.scroll.ps-container > .ps-scrollbar-y-rail { width: 7px; right: 0 !important; background: #ebebeb; }
+.scroll.ps-container > .ps-scrollbar-x-rail { display: none !important; }
+.scroll.ps-container > .ps-scrollbar-y-rail .ps-scrollbar-y { @include border-rad(5px); width: 7px; background:#c3c3c6; }    
 
 
 /* ---------------
@@ -2480,6 +2566,7 @@ button.btn-s {
     .basket-cell-img { // Image
         position: relative;
         width: 70px;
+        width: 9%;
         vertical-align: top;
 
         i.remove {
@@ -2492,15 +2579,18 @@ button.btn-s {
     }
 
     .basket-cell-name { // Name
-        width: 268px;
+        //width: 268px;
+        width: 33%;
     }
 
     .basket-cell-items { // Items
-        width: 200px;
+        //width: 200px;
+        width: 25%;
     }
 
     .basket-cell-sum { // Sum
-        width: 80px;
+        //width: 80px;
+        width: 10%;
     }
 }
 
@@ -4159,7 +4249,7 @@ $colors: 15;
     -------------- */
 
 .cabinet-content#content {
-    padding: 55px 0 0;
+    padding-top: 55px;
 }
 
 .cabinet-wrap {
@@ -4184,6 +4274,11 @@ $colors: 15;
             margin-bottom: 19px;
         }
 
+        .basket-order-item:last-child {
+            margin-bottom: 0;
+            border: none;
+        }
+
         .basket-cell-name {
             width: 46%;
             padding-top: 15px;
@@ -4196,7 +4291,7 @@ $colors: 15;
 }
 
 .cabinet-p-top {
-    padding: 20px 30px 25px;
+    padding: 15px 30px 18px;
 
     .title-s {
         margin-bottom: 0;
@@ -4239,9 +4334,12 @@ $colors: 15;
 .basket-cell-to-bsk {
     width: 80px;
 
+    .btn-to-basket {
+        margin: auto;
+    }
+
     .btn-i {
         position: static;
-        margin: auto;
     }
 }
 
@@ -4249,5 +4347,183 @@ $colors: 15;
 
     .prod-name {
         margin-bottom: 14px;
+    }
+}
+
+// History Table
+.history-row {
+    display: table;
+    width: 100%;
+}
+
+.history-row-toggle {
+    cursor: pointer;
+}
+
+.history-cell {
+    display: table-cell;
+    position: relative;
+    width: 25%;
+    padding: 20px 0;
+    border-top: 1px solid $col-bor;
+
+    .head & {
+        @extend .text-head;
+        padding: 35px 0 37px;
+        border-top: none;
+    }
+
+    &:first-child {
+        width: 29%;
+        padding-left: 9%;
+    }
+
+    > span {
+        font-size: 15px;
+    }
+
+    .btn-toggle {
+        position: absolute;
+        top: 21px;
+        left: 11.5%;
+    }
+}
+
+.btn-toggle {
+    display: block;
+    position: relative;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+
+    &:after {
+        @extend .trans;
+        @include st(10px, $col-h, 135deg);
+        content:"";
+        border-width: 2px;
+    }
+
+    .is-open &:after {
+        @include rot(-45deg);
+        margin-top: 3px;
+    }
+}
+
+.history-row-drop {
+    padding-left: 8%;
+    padding-bottom: 10px;
+    display: none;
+}
+
+.history-product-wrap {
+    width: 74%;
+    float: left;
+    font-size: 0;
+}
+
+.history-product-item {
+    display: inline-block;
+    width: 33.333%;
+    vertical-align: top;
+
+    .basket-product {
+        padding-top: 34px;
+        height: 120px;
+    }
+}
+
+.history-total {
+    width: 23%;
+    float: right;
+    padding-top: 30px;
+
+    span {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+// Wishlist
+.columns-two {
+    @include flex(space-between);
+
+    .column {
+        width: 49.2%;
+    }
+}
+
+.product-panel {
+    position: relative;
+    padding: 12px 0 0 32px;
+    height: 135px;
+    margin-bottom: 15px;
+
+    .del {
+        top: 15px;
+        right: 15px;
+    }
+
+    .product {
+        width: 50%;
+    }
+
+    .right-s {
+        position: absolute;
+        right: 35px;
+        top: 57px;
+
+        > div {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 15px;
+        }
+    }
+}
+
+.product {
+    padding-top: 34px;
+    padding-left: 88px;
+
+    .basket-product-name {
+        margin-bottom: 15px;
+    }
+}
+
+.btn-to-basket {
+    width: 26px;
+
+    .btn-i {
+        position: static;
+    }
+}
+
+.del {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+
+    &:hover {
+        &:before, &:after {
+            background-color: #000;
+        }
+    }
+
+    &:before, &:after {
+        @extend .ps;
+        @extend .trans;
+        width: 1px;
+        height: 11px;
+        left: 5px;
+        background-color: #d4d4d7;
+    }
+
+    &:before {
+        @include rot(-45deg);
+    }
+
+    &:after {
+        @include rot(45deg);
     }
 }
