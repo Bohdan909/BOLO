@@ -10,7 +10,7 @@ html { @include border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 html, body {
-    min-width: 1200px;
+    min-width: 375px;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -29,17 +29,26 @@ html, body {
         position: static;
         height: 173px;
     }
+
+    @include tablet {
+        padding-top: 74px;
+        margin-bottom: -110px;
+
+        &:after {
+            height: 110px;
+        }
+    }
 }
 
 @media screen and (max-width:1200px){
 
-    #main {
-        padding-top: 0;
-    }
+    // #main {
+    //     padding-top: 0;
+    // }
 
-    #header {
-        position: relative !important;
-    }
+    // #header {
+    //     position: relative !important;
+    // }
 }
 
 .socket {
@@ -62,6 +71,34 @@ html, body {
     z-index: 999;
     height: $headHeight;
     -webkit-backface-visibility: hidden;
+    
+    @include tablet {
+        height: auto;
+
+        &.shadow {
+            box-shadow: 0px 12px 18px 1px rgba(19, 36, 45, 0.09);
+            -webkit-box-shadow: 0px 12px 18px 1px rgba(19, 36, 45, 0.09);
+        }
+
+        .socket {
+            height: 74px;
+            padding: 0 30px;
+        }
+    }
+
+    @include mobile {
+
+        .socket {
+            padding: 0 20px;
+        }
+    }
+
+    @include mobile-sm {
+
+        .socket {
+            width: 320px;
+        }
+    }
 }
 
 #header.is-fixed {
@@ -74,12 +111,25 @@ html, body {
     height: 81px;
     border-bottom: 1px solid #efeff1;
     background-color: #fff;
+
+    @include tablet {
+        height: 74px;
+        border: none;
+
+        .info-block {
+            display: none;
+        }
+    }
 }
 
 .header-menu {
     background-color: #fff;
     box-shadow: 0px 12px 18px 1px rgba(19, 36, 45, 0.09);
-    -webkit-box-shadow: 0px 12px 18px 1px rgba(19, 36, 45, 0.04);   
+    -webkit-box-shadow: 0px 12px 18px 1px rgba(19, 36, 45, 0.04);  
+
+    @include tablet {
+        display: none;
+    } 
 }
 
 .logo-wrap {
@@ -88,12 +138,31 @@ html, body {
     padding-top: 19px;
     text-align: center;
 
+    @include tablet {
+        display: none;
+    }
+
     span {
         @extend .text;
         padding-top: 6px;
         display: block;
     }
 }
+
+.logo-mobile {
+    position: absolute;
+    top: 28px;
+    left: 40px;
+    width: 138px;
+    height: 17px;
+    display: block;
+    text-decoration: none;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+} 
 
 .info-block {
     position: relative;
@@ -285,12 +354,42 @@ a.info-block div:first-child:hover {
     }
 }
 
+.header-basket-buttons {
+    font-size: 0;
+
+    .btn-a {
+        width: 50%;
+
+        &:last-child {
+            color: $col-h;
+            border-right: none;
+        }
+    }
+}
+
+.btn-a {
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: 14px;
+    color: #747474;
+    text-decoration: none;
+    border-bottom: 1px solid $col-bor;
+    border-right: 1px solid $col-bor;
+}
 
 .header-items {
     position: absolute;
     z-index: 1;
     top: 29px;
     right: 0;
+
+    @include tablet {
+        float: right;
+        top: 25px;
+        position: relative;
+    }
 }
 
 .items-wrap, .header-cabinet-wrap {
@@ -298,6 +397,21 @@ a.info-block div:first-child:hover {
     float: left;
     width: 57px;
     margin-left: 28px;
+
+    .socket {
+        height: 0 !important;
+    }
+
+    @include mobile {
+        margin-left: 12px;
+    }
+}
+
+.items-wrap {
+
+    @include mobile {
+        width: 24px;
+    }
 }
 
 
@@ -342,12 +456,20 @@ a.info-block div:first-child:hover {
         white-space: nowrap;
         font-family: $font-med;
     }
+
+    @include mobile {
+        
+        div {
+            width: 0;
+            text-indent: -9999px;
+        }
+    }
 }
 
 .header-items-drop, .cabinet-drop {
     @include border-rad(8px);
     position: absolute;
-    top: 40px;
+    top: 70px;
     right: 10px;
     width: 225px;
     padding: 15px 25px 18px;
@@ -360,6 +482,10 @@ a.info-block div:first-child:hover {
     transform: translateY(20px);
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
+
+    @include tablet {
+        top: 62px;
+    }
 
     &.is-open {
         animation: itemsOpen 0.3s linear forwards;
@@ -377,10 +503,10 @@ a.info-block div:first-child:hover {
     }
 
     .header-drop-products {
-        max-height: 218px;
+        max-height: 217px;
         overflow-y: auto;
         overflow-x: hidden;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .basket-product {
@@ -393,6 +519,7 @@ a.info-block div:first-child:hover {
 
         &:last-child {
             margin-bottom: 0;
+            border: none;
         }
 
         .img {
@@ -428,8 +555,46 @@ a.info-block div:first-child:hover {
 }
 
 .header-items-drop {
-    display: none;
+    // display: none;
+    overflow: visible !important;
+
+    &.header-basket {
+        right: 107px;
+
+        @include tablet {
+            right: 138px;
+        }
+    }
+
+    &.header-fav {
+        right: 190px;
+
+        @include tablet {
+            right: 222px;
+        }
+
+        .header-drop-products {
+            margin-bottom: 0;
+        }
+    }
+
+    @include mobile {
+        @include border-rad(0px);
+        width: auto !important;
+        top: 74px;
+        left: 0;
+        right: 0 !important;
+        border: none;
+        box-shadow: inset 0 24px 24px -20px rgba(19, 36, 45, 0.03), 0px 3px 3px 0px rgba(21, 34, 40, 0.09);
+        -webkit-box-shadow: inset 0 24px 24px -20px rgba(19, 36, 45, 0.03), 0px 3px 3px 0px rgba(21, 34, 40, 0.09);
+
+        &:before {
+            display: none;
+        }
+    }
 }
+
+
 
 @keyframes itemsOpen {
     100% {
@@ -478,13 +643,25 @@ a.info-block div:first-child:hover {
             text-decoration: none;
         }
     }
+
+    @include mobile {
+        padding-left: 23px;
+
+        span {
+            width: 0;
+            text-indent: -9999px;
+        }
+    }
 }
 
 .cabinet-drop {
     padding: 0;
-    top: 70px;
     right: -10px;
     outline: none !important;
+
+    @include tablet {
+        right: 52px;
+    }
 
     ul {
 
@@ -518,13 +695,27 @@ a.info-block div:first-child:hover {
 
 .modal.fade  {
     
-    .modal-dialog.cabinet-drop {
+    .modal-dialog.cabinet-drop,
+    .modal-dialog.header-items-drop {
         transform: translateY(20px);
         -webkit-transform: translateY(20px);
         -ms-transform: translateY(20px);
+
+        @include tablet {
+            transform: translateY(10px);
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+        }
+
+        @include mobile {
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -ms-transform: translateY(0px);
+        }
     }
 
-    &.in .modal-dialog.cabinet-drop {
+    &.in .modal-dialog.cabinet-drop,
+    &.in .modal-dialog.header-items-drop {
         transform: translateY(0px);
         -webkit-transform: translateY(0px);
         -ms-transform: translateY(0px);
@@ -564,10 +755,10 @@ a.info-block div:first-child:hover {
                 }
             }
 
-            &:first-child a {
-                padding-left: 27px;
-                text-align: left;
-            }
+            // &:first-child a {
+            //     padding-left: 27px;
+            //     text-align: left;
+            // }
 
             &:last-child {
                 border: none;
@@ -581,6 +772,272 @@ a.info-block div:first-child:hover {
 }
 
 
+
+// Menu Button
+.btn-menu-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    display: none;
+
+    .socket {
+        @include transition(width, 0.3s, linear);
+    }
+
+    .menu-open & {
+        margin-left: 30px;
+    }
+
+    .menu-open & .socket {
+        width: 100% !important;
+    }
+
+    @include tablet {
+        display: block;
+
+        .socket {
+            margin: 0 30px;
+            padding: 0;
+        }
+
+        .menu-open & {
+            margin-left: 0;
+        }
+    }
+
+    @include mobile {
+
+        .socket {
+            width: 280px;
+            margin: 0 20px;
+        }
+    }
+}
+
+#btn-menu {
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: 24px;
+    height: 18px;
+    display: block;
+    cursor: pointer;
+
+    i {
+        @include border-rad(1px);
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        left: 0;
+        background: #636363;
+        transform-origin: 50% 50%;
+    }
+
+    i:nth-child(1) {
+        top: 0px;
+    }
+
+    i:nth-child(2) {
+        top: 8px;
+    }
+
+    i:nth-child(3) {
+        top: 16px;
+    }
+}
+
+.menu-open {
+
+    #btn-menu {
+
+        i:nth-child(2) {
+            opacity: 0;
+            transition: opacity 0.1s linear 0.1s;
+            -ms-transition: opacity 0.1s linear 0.1s;
+            -webkit-transition: opacity 0.1s linear 0.1s;
+        }
+
+        i:nth-child(1) {
+            animation: to-cross-left 0.5s linear forwards;
+            -ms-animation: to-cross-left 0.5s linear forwards;
+            -webkit-animation: to-cross-left 0.5s linear forwards;
+        }
+
+        i:nth-child(3) {
+            animation: to-cross-right 0.5s linear forwards;
+            -ms-animation: to-cross-right 0.5s linear forwards;
+            -webkit-animation: to-cross-right 0.5s linear forwards;
+        }
+    }
+}
+
+.menu-close {
+
+    #btn-menu {
+
+        i:nth-child(2) {
+            opacity: 1;
+            transition: opacity 0.1s linear 0.3s;
+            -ms-transition: opacity 0.1s linear 0.3s;
+            -webkit-transition: opacity 0.1s linear 0.3s;
+        }    
+
+        i:nth-child(1) {
+            animation: from-cross-left 0.5s linear forwards;
+            -ms-animation: from-cross-left 0.5s linear forwards;
+            -webkit-animation: from-cross-left 0.5s linear forwards;
+        }
+
+        i:nth-child(3) {
+            animation: from-cross-right 0.5s linear forwards;
+            -ms-animation: from-cross-right 0.5s linear forwards;
+            -webkit-animation: from-cross-right 0.5s linear forwards;
+        }
+    }
+}
+
+@keyframes to-cross-left {
+    50% {
+        @include rot(0deg);
+        top: 8px;
+    }
+
+    100% {
+        @include rot(-45deg);
+        top: 8px;
+    }
+}
+
+@keyframes to-cross-right {
+    50% {
+        @include rot(0deg);
+        top: 8px;
+    }
+
+    100% {
+        @include rot(45deg);
+        top: 8px;
+    }
+}
+
+@keyframes from-cross-left {
+    0% {
+        @include rot(-45deg);
+        top: 8px;
+    }
+
+    30% {
+        @include rot(0deg);
+        top: 8px;
+    }
+
+    100% {
+        @include rot(0deg);
+        top: 0;
+    }
+}
+
+@keyframes from-cross-right {
+    0% {
+        @include rot(45deg);
+        top: 8px;
+    }
+
+    30% {
+        @include rot(0deg);
+        top: 8px;
+    }
+
+    100% {
+        @include rot(0deg);
+        top: 16px;
+    }
+}
+
+// Menu
+.menu-wrap {
+    @include transition(opacity, 0.2s, linear);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &:after {
+        @extend .trans;
+        @extend .ps;
+        background-color: #000;
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.menu-mobile {
+    @include transition(left, 0.3s, ease-in);
+    position: absolute;
+    z-index: 1;
+    width: 280px;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    padding: 113px 0 0 30px;
+    background-color: #fff;
+    text-align: left;
+
+    transition-delay: 0.2s;
+    -ms-transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    
+    .menu-open & {
+        left: 0;
+    }
+
+    .menu-close & {
+        transition-delay: 0s;
+        -ms-transition-delay: 0s;
+        -webkit-transition-delay: 0s;
+    }
+    
+    ul {
+
+        li {
+            margin-bottom: 50px;
+
+            > a {
+                display: block;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: #212121;
+                text-decoration: none;
+                font-family: $font-med;
+            }
+
+            &.is-current > a {
+                color: $col-h;
+            }
+        }
+    }
+}
+
+
+@media (max-height: 560px){
+
+    .menu-mobile {
+        padding-top: 75px;
+
+        ul li {
+            margin-bottom: 20px;    
+        }
+    }
+}
 
 
 /* =========================
@@ -624,6 +1081,35 @@ a.info-block div:first-child:hover {
 
     .footer-btm {
         text-align: center;
+    }
+
+    @include tablet {
+        height: 110px;
+        
+        .footer {
+            width: auto;
+        }
+
+        .footer-top {
+            height: auto;
+            border: none;
+
+            .info-block {
+                display: none;
+            }
+
+            .social {
+                top: 25px;
+                left: 50%;
+                margin-left: -50px;
+            }
+        }
+
+        .copyright {
+            position: static;
+            padding-top: 71px;
+            text-align: center;
+        }
     }
 }
 
@@ -692,6 +1178,13 @@ a.info-block div:first-child:hover {
     }
 }
 
+@include tablet {
+    
+    .partners, .rights {
+        display: none;
+    }
+}
+
 
 
 /* =========================
@@ -701,6 +1194,10 @@ a.info-block div:first-child:hover {
 #content {
     padding: 0 0 45px;
 
+    @include tablet {
+        padding-top: 30px;
+    }
+
     &.content-socket {
         padding-bottom: 0;
     }
@@ -709,6 +1206,11 @@ a.info-block div:first-child:hover {
 .breadcrumbs {
     padding-top: 37px;
     margin-bottom: 36px;
+
+    @include tablet {
+        display: none;
+        padding-left: 30px;
+    }
 
     li {
         display: inline-block;
@@ -730,7 +1232,7 @@ a.info-block div:first-child:hover {
             display: none;
         }
 
-        a {
+    a {
             font-size: 15px;
         }
     }
@@ -752,10 +1254,26 @@ a.info-block div:first-child:hover {
         box-shadow: 0px 4px 4px 0px rgba(21, 34, 40, 0.13);
         -webkit-box-shadow: 0px 4px 4px 0px rgba(21, 34, 40, 0.13);
     }
+
+    @include tablet {
+        
+        &.widget-block, &.basket-order-block {
+            @include border-rad(0px);
+        }
+    }
 }
 
 .widget-block {
     padding: 30px 15px 32px 25px;
+
+    @include tablet {
+        padding-right: 25px;
+    }
+
+    @include mobile {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     .title-2 {
         margin-bottom: 7px;
@@ -782,10 +1300,6 @@ a.info-block div:first-child:hover {
             color: $col-h;
         }
     }
-}
-
-.border-rad {
-    @include border-rad(8px);
 }
 
 .circ {

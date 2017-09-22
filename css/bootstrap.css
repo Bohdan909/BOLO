@@ -301,3 +301,40 @@
 .affix {
   position: fixed;
 }
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+.visible-xs-inline,
+.visible-sm-inline,
+.visible-xs,
+.visible-sm {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .visible-xs-inline {
+    display: inline !important;
+  }
+
+  .visible-xs {
+    display: block !important;
+  }
+}
+@media (max-width: 1024px) {
+  .visible-sm-inline {
+    display: inline !important;
+  }
+
+  .visible-sm {
+    display: block !important;
+  }
+}

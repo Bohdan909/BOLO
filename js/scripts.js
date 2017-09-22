@@ -25,6 +25,43 @@ document.documentElement.className = document.documentElement.className.replace(
             });
         }());
 
+        // Menu Mobile
+        (function(){
+            var $menuWrap = $(".menu-wrap");
+            var $btn      = document.getElementById("btn-menu");
+            var $html     = document.querySelector("html");
+            
+            $btn.addEventListener("click", function(){
+
+                $menuWrap.fadeToggle(450);
+                $("#header").toggleClass("shadow");
+
+                ($html.className.match(/\bmenu-open\b/)) ? menuClose() : menuOpen()
+
+            });
+
+            ClickOut.prototype.menuClose = function(){
+                $menuWrap.fadeOut(450);
+                $("#header").addClass("shadow");
+                menuClose();
+            };
+
+            $menuWrap.on("click", function(){
+                new ClickOut(".menu").menuClose();
+            });
+
+            function menuOpen(){
+                $html.classList.remove("menu-close");
+                $html.classList.add("menu-open");
+            };  
+
+            function menuClose(){
+                $html.classList.remove("menu-open");
+                $html.classList.add("menu-close");
+            };  
+
+        }());
+
         // Tell Drop
         $(".drop-item > span em").on("click", function(){
             $(this).parents(".drop-item").toggleClass("is-open");
@@ -169,78 +206,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
         }());
         
-        // Filter
-        (function (){
-            var $del = $(".filter-item-head .delete"),
-                $bg  = $(".filter-drop-bg"),
-                ttlHeight = $(".filter-wrap .title-ico").innerHeight();
-
-            // Drop Position
-            $(".filter-item-drop").each(function (){
-                var items = $(this).children().length,
-                    itemsHeight = items * 57;
-
-                $(this).css({ "top": - ( (itemsHeight - 68) / 2) }); 
-            }); 
-
-            // Hover        
-            $(".filter-item").on({
-                mouseenter: function(){  
-                    var $drop = $(this).find(".filter-item-drop"),
-                        posTop = $drop.position().top,
-                        dropHeight = $(this).find(".filter-option").length * 57,
-                        index = $(this).index();
-
-                    $(this).addClass("is-open");
-                        
-                    $bg.css({
-                        "opacity": 1,
-                        "height": dropHeight,
-                        "top": posTop + ttlHeight + ( index * 68 ) + 1
-                    }); 
-                },
-
-                mouseleave: function (){
-                    $(this).removeClass("is-open");   
-                }
-            });
-
-            $(".filter-block").on("mouseleave", function(){
-                $bg.attr("style","opacity: 0");
-            });
-
-            // Click Option
-            $(".filter-option").on("click", function(){
-                var $this = $(this),
-                    optSel = $this.find("span").text();
-                    
-                $this
-                    .parents(".filter-item")
-                    .removeClass("is-open")
-                    .find(".filter-item-head")
-                    .addClass("is-active")
-                    .find("span")
-                    .text(optSel);
-
-                $bg.attr("style", "opacity: 0");  
-            });
-
-            // Delete
-            var filterArray = $(".filter-item-head span").map(function(){
-                return $(this).text();
-            }).get();
-
-            $del.on("click", function (){
-                var indexItem = $(this).parents(".filter-item").index();
-
-                $(this)
-                    .parent()
-                    .removeClass("is-active")
-                    .end()
-                    .next("span")
-                    .text(filterArray[indexItem]);
-            });
-        }());
+       
         
         // Add To Favorite and Basket
         (function(){
@@ -287,9 +253,27 @@ document.documentElement.className = document.documentElement.className.replace(
             });
 
             // Header Basket
-            var $btnHeaderItems = $(".header-items .items");
+            // var $btnHeaderItems = $(".header-items .items");
 
-            $btnHeaderItems.on("click", function(e){
+            // $btnHeaderItems.on("click", function(e){
+            //     var basketProd = $(".basket-block .basket-product").not(".place").clone(true);
+                
+            //     $(this).next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
+                
+            //     $(".header-drop-products").html(basketProd).promise().done(function(){
+            //         setHold();
+            //     });
+
+            //     e.preventDefault();
+            // });
+
+            // $(document).on("click", function(event) {
+            //     if ($(event.target).closest(".items-wrap").length) return;
+            //     $(".header-items-drop").fadeOut(200).removeClass("is-open");
+            //     event.stopPropagation();
+            // });
+
+            $("#basket-drop").on("show.bs.modal", function(e){
                 var basketProd = $(".basket-block .basket-product").not(".place").clone(true);
                 
                 $(this).next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
@@ -297,14 +281,6 @@ document.documentElement.className = document.documentElement.className.replace(
                 $(".header-drop-products").html(basketProd).promise().done(function(){
                     setHold();
                 });
-
-                e.preventDefault();
-            });
-
-            $(document).on("click", function(event) {
-                if ($(event.target).closest(".items-wrap").length) return;
-                $(".header-items-drop").fadeOut(200).removeClass("is-open");
-                event.stopPropagation();
             });
 
             // Basket
@@ -498,6 +474,128 @@ document.documentElement.className = document.documentElement.className.replace(
         }()); // End Fav and Basket
 
 
+        // Filter Desktop
+        (function (){
+            var $del = $(".filter-item-head .delete"),
+                $bg  = $(".filter-drop-bg"),
+                ttlHeight = $(".filter-wrap .title-ico").innerHeight();
+
+            // Drop Position
+            $(".filter-item-drop").each(function (){
+                var items = $(this).children().length,
+                    itemsHeight = items * 57;
+
+                $(this).css({ "top": - ( (itemsHeight - 68) / 2) }); 
+            }); 
+
+            // Hover        
+            $(".filter-item").on({
+                mouseenter: function(){  
+
+                    var $drop = $(this).find(".filter-item-drop"),
+                        posTop = $drop.position().top,
+                        dropHeight = $(this).find(".filter-option").length * 57,
+                        index = $(this).index();
+
+                    if (window.innerWidth > 1024){
+                        $(this).addClass("is-open");
+                        
+                        $bg.css({
+                            "opacity": 1,
+                            "height": dropHeight,
+                            "top": posTop + ttlHeight + ( index * 68 ) + 1
+                        }); 
+                    }     
+                    
+                },
+
+                mouseleave: function (){
+                    if (window.innerWidth > 1024){
+                        $(this).removeClass("is-open");
+                    }   
+                }
+            });
+
+            $(".filter-block").on("mouseleave", function(){
+                $bg.attr("style","opacity: 0");
+            });
+
+            // Click Option
+            $(".filter-option").on("click", function(){
+                var $this = $(this),
+                    optSel = $this.find("span").text();
+                    
+                $this
+                    .parents(".filter-item")
+                    .removeClass("is-open")
+                    .find(".filter-item-head")
+                    .addClass("is-active")
+                    .find("span")
+                    .text(optSel);
+
+                $bg.attr("style", "opacity: 0");  
+            });
+
+            // Delete
+            var filterArray = $(".filter-item-head span").map(function(){
+                return $(this).text();
+            }).get();
+
+            $del.on("click", function (){
+                var indexItem = $(this).parents(".filter-item").index();
+
+                $(this)
+                    .parent()
+                    .removeClass("is-active")
+                    .end()
+                    .next("span")
+                    .text(filterArray[indexItem]);
+            });
+        }());
+
+        // Filter Mobile
+        (function(){
+
+            $(".filter-top .filter-button").on("click", function(){
+                var id = $(this).data("id");
+
+                if ($(this).is(".is-active")){
+                    $(".filter-drop-wrap").slideUp(200);
+                    $(this).removeClass("is-active");
+                } else {
+                    $(".filter-drop-wrap").slideUp(400);
+                    $(".filter-top .filter-button").removeClass("is-active");
+                    $(".filter-drop-wrap" + "#" + id).delay(400).slideDown(400);
+                    $(this).addClass("is-active");
+                }
+            });
+
+            $(".filter-item-head").on("click", function(e){
+                var $this        = $(this);
+                var $filterPoint = $this.parent();
+                var $filterDrop  = $this.next();
+                var target = $(e.target);
+
+                if (window.innerWidth < 1025){
+                    if ($filterPoint.is(".is-open")){
+                        $filterPoint.removeClass("is-open");
+                        $filterDrop.slideUp(150);
+                    } else {
+                        if (!target.hasClass("delete")){
+                            $(".filter-item").removeClass("is-open");
+                            $(".filter-item-drop").slideUp(150);
+                            $filterPoint.addClass("is-open");
+                            $filterDrop.slideDown(200);
+                        }
+                    } 
+                }
+
+                               
+            });
+
+        }());
+
+
         // Popup Side
         (function(){
             var $wrap      = $(".popup-side-wrap"),
@@ -643,7 +741,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
         // Tabs FAQ
         (function(){
-            var $tab = document.querySelectorAll(".tabs-wrap .tabs li");
+            var $tab = document.querySelectorAll(".faq-tab, .tab-item");
 
             $tab.forEach(function(item){
 
@@ -651,7 +749,7 @@ document.documentElement.className = document.documentElement.className.replace(
                     var id = this.getAttribute("data-tab");
                     var $tabContent = document.querySelectorAll(".tab-block");
 
-                    for ( var i = 0;  i < $tabContent.length; i++ ){
+                    for ( var i = 0; i < $tabContent.length; i++ ){
                         $tabContent[i].classList.remove("is-show");
                         $tab[i].classList.remove("is-current");
                     };
@@ -661,7 +759,7 @@ document.documentElement.className = document.documentElement.className.replace(
                 });
             });
 
-        }());     
+        }());
 
         // Color Select
         (function(){
@@ -696,16 +794,21 @@ document.documentElement.className = document.documentElement.className.replace(
         }());
 
 
-
-        
-        
-
         windowSize();   
         $(window).resize(windowSize); 
     });
+    
+    var cachedWidth = window.innerWidth;
 
     function windowSize(){
         var winWidth = window.innerWidth;
+
+        // Resize Mobile
+        if (winWidth !== cachedWidth){
+            $(".filter-item-drop").attr("style","");
+
+            cachedWidth = winWidth;
+        } 
     };
 
     $(window).on("scroll", animate);
@@ -796,6 +899,19 @@ document.documentElement.className = document.documentElement.className.replace(
 
         document.getElementsByTagName("body")[0].appendChild(script);
     }
+
+     // Click Out
+    function ClickOut(element){
+        this.element = element;
+        
+        this.removeClass = function(class_){
+            $(document).on("click", function(event) {
+                if ($(event.target).closest(element).length) return;
+                $(element).removeClass(class_);
+                event.stopPropagation();
+            });
+        };
+    };
     
     
 

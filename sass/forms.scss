@@ -535,6 +535,13 @@ $time-c-anim: 0.4s;
     .btn {
         margin-right: 8px;
     }
+
+    @include mobile {
+
+        .btn {
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .btn-wrap-center {
@@ -586,3 +593,26 @@ $time-c-anim: 0.4s;
 
 
 
+.btn-wrap-center {
+    display: table;
+    width: 100%;
+    text-align: center;
+
+    .btn:not(.btn-create){
+        width: 155px;
+    }
+
+    .btn {
+        margin: 0 8px;
+    }
+
+    @include mobile {
+        .btn {
+            margin: 0 3px 8px;
+        }
+
+        .btn:not(.btn-create){
+            width: auto;
+        }
+    }
+}

@@ -16,7 +16,7 @@ h5 { font-size: 13px; line-height: 16px; }
     margin-bottom: 37px;
 
     .title {
-        margin-bottom: 12px;
+        margin-bottom: 7px;
     }
 
     .title-s {
@@ -26,11 +26,41 @@ h5 { font-size: 13px; line-height: 16px; }
             color: $col-h;
         }
     }
+
+    @include tablet {
+        padding-left: 30px;
+
+        &.title-wrap-center {
+            padding-left: 0;
+        }
+    }
+
+    @include mobile {
+
+        &:not(.title-wrap-left) {
+            width: 315px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
 }
 
 .title-wrap-center {
-    margin-bottom: 45px;
-    text-align: center;
+    margin-bottom: 37px;
+    
+    @include tablet {
+        text-align: center;
+    }
+
+    @include mobile {
+        padding-left: 0;
+
+        &.title-wrap-left-mob {
+            text-align: left;
+            margin: 0 15px 22px 25px !important;
+            width: auto !important;
+        }
+    }
 }
 
 .title, .title-2 {
@@ -52,6 +82,10 @@ h5 { font-size: 13px; line-height: 16px; }
 
 .title-s, .title-d {
     @extend .text;
+
+    @include mobile {
+        font-size: 13px !important;
+    }
 
     span {
         color: $col-h;

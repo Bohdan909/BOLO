@@ -11,14 +11,78 @@ $font-med: 'PFDinTextPro-Medium';
 $headHeight: 137px;
 
 // Media Query
+$mid-width: 1199px;
+$tablet-width: 1024px;
+$mobile-width: 767px;
+$mobile-width-sm: 374px;
 
+
+@mixin mid {
+    @media (max-width: #{$mid-width}){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet-width}){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}){
+        @content;
+    }
+}
+
+@mixin mobile-sm {
+    @media (max-width: #{$mobile-width-sm}){
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: 1025px){
+        @content;
+    }
+}
 
 // Socket
 @mixin socket {
     position: relative;
     width: 1100px;
     margin: auto;
+
+    @include mid {
+        width: 960px;
+    }
+
+    @include tablet {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 7px;
+    }
 }
+
+@mixin socket-2 {
+    position: relative;
+    width: 960px;
+    margin: auto;
+
+    @include tablet {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 14px;
+    }
+}
+
+
 
 // Web Kit Hack
 @mixin wk {
@@ -258,4 +322,8 @@ $headHeight: 137px;
     text-transform: uppercase;
     font-family: $font-med;
     color: $col-f-d;
+}
+
+.border-rad {
+    @include border-rad(8px);
 }
