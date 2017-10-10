@@ -18,7 +18,7 @@ html, body {
 
 #main {
     padding-top: $headHeight;
-    margin: 0 auto -173px;
+    margin: 0 auto -187px;
     min-height: 100%;
     text-align: left;
     overflow-x: hidden;
@@ -27,7 +27,7 @@ html, body {
         content: "";
         display: block;
         position: static;
-        height: 173px;
+        height: 187px;
     }
 
     @include tablet {
@@ -189,7 +189,7 @@ html, body {
             top: 4px;
             width: 21px;
             height: 28px;
-            background-position: -114px 0;
+            background: url(../images/ico-map.svg) no-repeat;
         }
     }
 
@@ -200,7 +200,7 @@ html, body {
             top: 4px;
             width: 32px;
             height: 22px;
-            background-position: -138px 0;
+            background: url(../images/ico-mail.svg) no-repeat;
         }
     }
 
@@ -572,10 +572,6 @@ a.info-block div:first-child:hover {
         @include tablet {
             right: 222px;
         }
-
-        .header-drop-products {
-            margin-bottom: 0;
-        }
     }
 
     @include mobile {
@@ -683,6 +679,7 @@ a.info-block div:first-child:hover {
 
                 &:hover {
                     color: #000 !important;
+                    background-color: #f0f1f1;
                 }
             }
 
@@ -1045,15 +1042,18 @@ a.info-block div:first-child:hover {
    ========================= */   
 
 #footer {
-    height: 173px;
+    height: 187px;
     background: #fff;
     text-align: left;
+    padding-top: 22px;
     box-shadow: 0px 3px 3px 0px rgba(21, 34, 40, 0.15);
     -webkit-box-shadow: 0px 3px 3px 0px rgba(21, 34, 40, 0.15);
 
     .footer {
-        width: 840px;
-        margin: auto;
+        @include clearfix;
+        width: 935px;
+        height: 145px;
+        margin: 0 auto;
     }
 
     .footer-top, .footer-btm {
@@ -1083,7 +1083,60 @@ a.info-block div:first-child:hover {
         text-align: center;
     }
 
+    .footer-left, .footer-center, .footer-right {
+        float: left;
+        padding-top: 13px;
+        height: 100%;
+
+        > span {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #212121;
+        }
+    }
+
+    .footer-left, .footer-center {
+        border-right: 1px solid $col-bor;
+    }
+
+    .footer-left {
+        width: 275px;
+
+        .info-block {
+            float: left;
+            max-width: 260px;
+            margin-bottom: 38px;
+        }
+    }
+
+    .footer-center {
+        width: 280px;
+        padding-left: 40px;
+
+        .social {
+            
+            li {
+                margin: 0 9px 0 0;
+            }
+        }
+
+        .partners {
+            margin-bottom: 25px;
+        }
+    }
+
+    .footer-right {
+        width: 380px;
+        padding-left: 25px;
+
+        .copyright {
+            font-size: 14px;
+        }
+    }
+
     @include tablet {
+        padding-top: 25px;
         height: 110px;
         
         .footer {
@@ -1099,24 +1152,57 @@ a.info-block div:first-child:hover {
             }
 
             .social {
+                position: absolute;
                 top: 25px;
                 left: 50%;
                 margin-left: -50px;
             }
         }
 
-        .copyright {
-            position: static;
-            padding-top: 71px;
-            text-align: center;
+        .footer-left, .footer-center > *, .footer-right > * {
+            display: none !important;
+        }
+
+        .footer {
+            position: relative;
+            height: auto;
+
+            .footer-center  {
+                width: 100%;
+                float: none;
+                padding: 0;
+
+                .social {
+                    display: block !important;
+                    text-align: center;
+
+                    li {
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            .footer-right {
+
+                .copyright {
+                    display: block !important;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    bottom: -20px;
+                    text-align: center;
+                }
+            }
         }
     }
 }
 
 .social {
+    font-size: 0;
 
     li {
-        float: left;
+        display: inline-block;
+        vertical-align: top;
         margin-left: 9px;
 
         a {
@@ -1127,37 +1213,45 @@ a.info-block div:first-child:hover {
         }
 
         &.ico-1 a {
-            background-position: 0 -54px;
+            background: url(../images/soc-1.svg) no-repeat;
 
             &:hover {
-                background-position: 0 -84px;
+                background: url(../images/soc-1-h.svg) no-repeat;
             }
         }
 
         &.ico-2 a {
-            background-position: -29px -54px;
+            background: url(../images/soc-2.svg) no-repeat;
 
             &:hover {
-                background-position: -29px -84px;
+                background: url(../images/soc-2-h.svg) no-repeat;
             }
         }
 
         &.ico-3 a {
-            background-position: -58px -54px;
+            background: url(../images/soc-3.svg) no-repeat;
 
             &:hover {
-                background-position: -58px -84px;
+                background: url(../images/soc-3-h.svg) no-repeat;
+            }
+        }
+
+        &.ico-4 a {
+            background: url(../images/soc-4.svg) no-repeat;
+
+            &:hover {
+                background: url(../images/soc-4-h.svg) no-repeat;
             }
         }
     }
 }
 
-.copyright, .rights {
-    @extend .text;
-    position: absolute;
-    left: 0;
-    top: 33px;
-}
+// .copyright, .rights {
+//     @extend .text;
+//     position: absolute;
+//     left: 0;
+//     top: 33px;
+// }
 
 .rights {
     left: auto;
@@ -1165,16 +1259,31 @@ a.info-block div:first-child:hover {
 }
 
 .partners {
-    width: 320px;
-    display: inline-block;
     vertical-align: top;
-    padding-top: 26px;
     font-size: 0;
 
     a {
         display: inline-block;  
         vertical-align: top;  
-        margin: 0 11px;
+        margin: 0 18px 0 0;
+    }
+}
+
+.mail-input.form-input-r {
+    width: 345px;
+    margin-bottom: 22px;
+
+    input {
+        padding-right: 205px;
+    }
+
+    > button.btn.btn-b {
+        width: 190px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 51px;
+        line-height: 51px;
     }
 }
 
@@ -1192,7 +1301,7 @@ a.info-block div:first-child:hover {
    ========================= */   
 
 #content {
-    padding: 0 0 45px;
+    padding: 40px 0 45px;
 
     @include tablet {
         padding-top: 30px;

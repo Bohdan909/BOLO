@@ -213,12 +213,13 @@ document.documentElement.className = document.documentElement.className.replace(
 
             // Favorite
             var $btn = $(".btn-i-b.fav"),
-                $fav = $(".items.fav");
+                $fav = $(".items.fav"),
+                $favCount = $(".header-fav .count-items");
                 
             $btn.on("click", function(){
 
                 var $heart = $(this).find(".fav"),
-                     clone = $heart.clone();
+                    clone  = $heart.clone();
 
                 if (!$(this).hasClass("in-fav")){
                     
@@ -253,53 +254,48 @@ document.documentElement.className = document.documentElement.className.replace(
             });
 
             // Header Basket
-            // var $btnHeaderItems = $(".header-items .items");
-
-            // $btnHeaderItems.on("click", function(e){
-            //     var basketProd = $(".basket-block .basket-product").not(".place").clone(true);
-                
-            //     $(this).next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
-                
-            //     $(".header-drop-products").html(basketProd).promise().done(function(){
-            //         setHold();
-            //     });
-
-            //     e.preventDefault();
-            // });
-
-            // $(document).on("click", function(event) {
-            //     if ($(event.target).closest(".items-wrap").length) return;
-            //     $(".header-items-drop").fadeOut(200).removeClass("is-open");
-            //     event.stopPropagation();
-            // });
-
             $("#basket-drop").on("show.bs.modal", function(e){
+                var $this = $(this);
                 var basketProd = $(".basket-block .basket-product").not(".place").clone(true);
                 
-                $(this).next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
+                $this.next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
                 
-                $(".header-drop-products").html(basketProd).promise().done(function(){
+                $this.find(".header-drop-products").html(basketProd).promise().done(function(){
                     setHold();
                 });
             });
 
+            // Header Fav    
+            // $("#fav-drop").on("show.bs.modal", function(e){
+            //     var $this = $(this);
+            //     var basketProd = $(".basket-block .basket-product").not(".place").clone(true);
+                
+            //     $this.next(".header-items-drop").fadeToggle(200).toggleClass("is-open");
+                
+            //     $this.find(".header-drop-products").html(basketProd).promise().done(function(){
+            //         setHold();
+            //     });
+            // });
+
             // Basket
             var $btnBasket = $(".btn-i-b.bkt"),
+                $btnAdd = $(".btn-i-b"),
                 $basketSum = $(".count-price"),
-                $basketItems = $(".count-items");
+                $basketItems = $(".basket-items .count-items, .header-basket .count-items");  
                 
             $basketSum.length 
                 && 
             $btnBasket.on("click", function(){
 
                 var $prodBlock = $(this).parents(".product-block"),
-                    $img = $prodBlock.find(".img img"),
+                    $img = $prodBlock.find(".img img:first-child"),
                     $basketImg = $(".basket-block .basket-product.place .img"),
                     imgClone = $img.clone(),
                     id = $prodBlock.data("id"),
                     name = $prodBlock.find(".prod-name").text(),
                     price = $prodBlock.find(".price").text();
 
+                        
                 if (!$(this).hasClass("in-bkt")){
                      $(this).addClass("in-bkt");
                      tooltipsRem($(this));
@@ -456,8 +452,12 @@ document.documentElement.className = document.documentElement.className.replace(
                 },
 
                 fav: function(op){
-                    var $favCount = $(".items.fav > div"),
-                        favItems  = parseInt($favCount.text());
+                    var $favCount = $(".count-items-fav"),
+                        favItems  = 0;
+
+                    $favCount.each(function(){
+                       favItems = parseInt($(this).text());
+                    });
 
                     switch(op){
                         case "plus":
@@ -740,26 +740,32 @@ document.documentElement.className = document.documentElement.className.replace(
         });
 
         // Tabs FAQ
-        (function(){
-            var $tab = document.querySelectorAll(".faq-tab, .tab-item");
+        // (function(){
+        //     var $tab = document.querySelectorAll(".faq-tab");
 
-            $tab.forEach(function(item){
+        //     $tab.forEach(function(item){
 
-                item.addEventListener("click", function(){
-                    var id = this.getAttribute("data-tab");
-                    var $tabContent = document.querySelectorAll(".tab-block");
+        //         item.addEventListener("click", function(){
+        //             var id = this.getAttribute("data-tab");
+        //             var $tabContent = document.querySelectorAll(".tab-block");
 
-                    for ( var i = 0; i < $tabContent.length; i++ ){
-                        $tabContent[i].classList.remove("is-show");
-                        $tab[i].classList.remove("is-current");
-                    };
+        //             for ( var i = 0; i < $tabContent.length; i++ ){
+        //                 $tabContent[i].classList.remove("is-show");
+        //                 $tab[i].classList.remove("is-current");
+        //             };
 
-                    item.classList.add("is-current");
-                    document.getElementById(id).classList.add("is-show");
-                });
-            });
+        //             item.classList.add("is-current");
+        //             document.getElementById(id).classList.add("is-show");
+        //         });
+        //     });
 
-        }());
+        // }());
+
+        // Cabinet
+        if (window.location.hash != "") {
+            $('a[href="' + window.location.hash + '"]').click();
+        }
+        
 
         // Color Select
         (function(){

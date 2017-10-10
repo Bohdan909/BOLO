@@ -1561,7 +1561,6 @@ button.btn-s {
         position: relative;
         float: left;
         height: 170px;
-        padding-top: 30px;
         text-align: center;
         cursor: pointer;
         border-right: 1px solid $col-bor;
@@ -1585,7 +1584,11 @@ button.btn-s {
             }
         }
 
-        &.is-current {
+        .act {
+            display: none;
+        }
+
+        &.is-current, &.active {
             @include border-rad(4px);
             background: #18c7ce;
             background-image: -webkit-linear-gradient(bottom, rgb(96,232,189) 0%, rgb(0,188,212) 100%);
@@ -1603,9 +1606,23 @@ button.btn-s {
                 }
             }
 
+            .act {
+                display: table-cell;
+            }
+
+            .def {
+                display: none;
+            }
+
             .prod-name, span {
                 color: #fff;
             }
+        }
+
+        > a {
+            padding-top: 30px;
+            height: 100%;
+            text-decoration: none;
         }
     }
 
@@ -1672,7 +1689,6 @@ button.btn-s {
         
         .faq-tab {
             @include border-rad(8px);
-            padding-top: 22px;
             height: 160px;
             width: auto;
             flex: 1;
@@ -1689,6 +1705,10 @@ button.btn-s {
                 @include border-rad(8px);
                 box-shadow: 0px 3px 3px 0px rgba(21, 34, 40, 0.09) !important;
                 -webkit-box-shadow: 0px 3px 3px 0px rgba(21, 34, 40, 0.09) !important;
+            }
+
+            > a {
+                padding-top: 22px;
             }
 
             .ico {
@@ -1986,7 +2006,7 @@ button.btn-s {
             @include border-rad(0px);
             display: block;
             width: auto;
-            height: 215px;
+            height: 130px;
             z-index: 2;
             bottom: auto;
             left: 0 !important;
@@ -2137,7 +2157,7 @@ button.btn-s {
 @include tablet {
 
     .feedback-block {
-        height: 510px;
+        height: 420px;
     }
 }
 
@@ -2731,7 +2751,6 @@ button.btn-s {
 
     .title-wrap {
         padding-top: 57px;
-        margin-bottom: 50px;
         text-align: center;
 
         .title-s {
@@ -2753,6 +2772,7 @@ button.btn-s {
     overflow: hidden;
 
     width: 1410px;
+    padding-top: 50px;
     position: relative;
     left: 50%;
     margin-left: -705px;
@@ -2764,7 +2784,17 @@ button.btn-s {
     width: 270px;
     height: 296px;
     margin: 0 6px;
-    overflow: hidden;
+
+    &:hover {
+
+        .img img, .product-info {
+            transform: translateY(-15px);
+        }
+
+        .img img {
+            @include delay(0.1s);
+        }
+    }
 
     .img {
         position: absolute;
@@ -2773,6 +2803,10 @@ button.btn-s {
         right: 0;
         bottom: -59px;
         text-align: center;
+
+        img {
+            @include transition(transform, 0.25s, ease-in);
+        }
     }
 
     .product-info, .img {
@@ -2782,21 +2816,19 @@ button.btn-s {
     }
 
     .product-info {
+        @include transition(transform, 0.25s, ease-in);
+        @extend .vis;
         top: 55px;
-    }
-
-    .img {
-        bottom: -59px;   
     }
 
     &.is-center {
 
         .product-info {
-            top: 0;
+            top: 6px;
         }
 
         .img {
-            bottom: 0;
+            bottom: -15px;
         }
     }
 
@@ -3227,6 +3259,17 @@ button.btn-s {
 
     &:nth-child(even) {
         border: none;
+    }
+}
+
+@include mobile {
+
+    .phone-mod-table {
+        display: block;
+    }
+
+    .phone-mod-block {
+        width: 100%;    
     }
 }
 
@@ -3824,6 +3867,10 @@ button.btn-s {
     .basket-cell-name { // Name
         //width: 33%;
         flex: 2;
+
+        @include mobile {
+            padding-left: 10px;
+        }
     }
 
     .basket-cell-items { // Items
@@ -4976,6 +5023,12 @@ button.btn-s {
     left: 0;
     right: 0;
 
+    .feedback-block {
+        @include tablet {
+            padding-bottom: 20px;
+        }
+    }
+
     .feedback-section & {
         height: 560px;
     }
@@ -5332,7 +5385,24 @@ $colors: 15;
     position: relative;
     padding-top: 11px;
     margin-bottom: 15px;
-    font-size: 0;
+    //font-size: 0;
+    width: 150px;
+
+    .dropdown-toggle {
+        margin-bottom: 0;
+    }
+
+    .media-left {
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 10px;
+    }
+
+    .media-body {
+        padding-left: 26px;
+    }
+    
 
     .prod-color {
         @include border-rad(50%);
@@ -6170,13 +6240,22 @@ $colors: 15;
 .cabinet-point {
     border-top: 1px solid $col-bor;
 
-    > span {
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    a > span {
         @extend .trans;
         @include color-b(0.6);
         display: block;
         padding: 25px 30px;
         font-size: 15px;
         cursor: pointer;
+
+        &:hover {
+            color: #000;
+        }
 
         @include tablet {
             padding: 15px 0;
@@ -6186,13 +6265,9 @@ $colors: 15;
         @include mobile {
             font-size: 13px;
         }
-
-        &:hover {
-            color: #000;
-        }
     }
 
-    &.is-current span {
+    &.is-current span, &.active span, &.active span:hover {
         color: $col-h;
     }
 }
@@ -6234,6 +6309,10 @@ $colors: 15;
 
     .prod-name {
         margin-bottom: 14px;
+    }
+
+    .title-s {
+        line-height: 18px;
     }
 }
 
@@ -6327,6 +6406,14 @@ $colors: 15;
     .basket-product {
         padding-top: 34px;
         height: 120px;
+    }
+
+    @include mobile {
+        width: 50%;
+    }
+
+    @media (max-width: 550px){
+        width: 100%;
     }
 }
 

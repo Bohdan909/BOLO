@@ -103,10 +103,10 @@
 						<div class="header-items">
 							<div class="items-wrap">
 								<button id="header-basket-b" class="items fav" type="button" data-toggle="modal" data-target="#fav-drop">
-									<div>0</div>
+									<div class="count-items-fav">0</div>
 								</button>
 
-								 <div id="fav-drop" class="modal fade" tabindex="-1"   role="dialog">
+								<div id="fav-drop" class="modal fade" tabindex="-1"   role="dialog">
                                 	<div class="socket">
 										<div class="header-items-drop header-fav modal-dialog">
 											<div class="header-drop-hold">
@@ -114,6 +114,15 @@
 											</div>
 
 											<div class="header-drop-products"></div>
+
+											<a href="wishlist.htm" class="btn">
+												<span>Перейти в избранное</span>
+											</a>
+
+											<div class="header-drop-count">
+											    товаров:
+											    <span class="count-items-fav">0</span> 
+											</div>
 										</div>
 									</div>
 								</div>
@@ -137,8 +146,9 @@
 											</a>
 
 											<div class="header-drop-count">
-												<span class="count-items">0</span> 
-												товара на сумму 
+												товаров:
+												<span class="count-items">0</span>, 
+												 на сумму 
 												<span class="count-price">0</span> 
 												грн.
 											</div>
@@ -156,9 +166,19 @@
 									<div class="socket">
 										<div class="modal-dialog cabinet-drop" role="document">
 											<ul>
-												<li><a href="">Контакты</a></li>
-												<li><a href="">Доставка</a></li>
-												<li><a href="">история</a></li>
+												<li>
+													<a href="cabinet.htm">
+														Контакты
+													</a>
+												</li>
+												<li>
+													<a href="cabinet.htm#tab-2">	Доставка
+													</a>
+												</li>
+												<li>
+													<a href="cabinet.htm#tab-4">	история
+													</a>
+												</li>
 												<li class="logout"><a href="">Выйти из аккаунта</a></li>
 											</ul>
 										</div>
@@ -191,7 +211,7 @@
 			    	<div class="title-s">
 			    		Перейдите в каталог что бы посмотреть все варианты чехлов!
 			    	</div>
-			    	<a href="" class="btn btn-b btn-cat">
+			    	<a href="catalogue.htm" class="btn btn-b btn-cat">
 			    		<span>Перейти в каталог</span>
 			    	</a>
 
@@ -219,62 +239,62 @@
 					<div class="product-carousel-item">
 						<div class="fade" data-q="4">
 							<div class="product-info">
-								<a class="title-m" href="#">red snowflake</a>
+								<a class="title-m" href="prod_card.htm">red snowflake</a>
 								<div class="price-m">299 грн.</div>
 							</div>
 						</div>
-						<a href="#" class="img animate-item move" data-q="2">
+						<a href="prod_card.htm" class="img animate-item move" data-q="2">
 							<img src="images/case-1.png" alt="">
-						</a href="#">
+						</a>
 					</div>
 
 					<div class="product-carousel-item">
 						<div class="fade" data-q="5">
 							<div class="product-info">
-								<a class="title-m" href="#">bubbles blue</a>
+								<a class="title-m" href="prod_card.htm">bubbles blue</a>
 								<div class="price-m">144 грн.</div>
 							</div>
 						</div>
-						<a href="#" class="img animate-item move" data-q="3">
+						<a href="prod_card.htm" class="img animate-item move" data-q="3">
 							<img src="images/case-2.png" alt="">
-						</a href="#">
+						</a>
 					</div>
 
 					<div class="product-carousel-item is-center">
 						<div class="fade" data-q="6">
 							<div class="product-info">
-								<a class="title-m" href="#">red snowflake</a>
+								<a class="title-m" href="prod_card.htm">red snowflake</a>
 								<div class="price-m">299 грн.</div>
 							</div>
 						</div>
-						<a href="#" class="img animate-item move" data-q="4">
+						<a href="prod_card.htm" class="img animate-item move" data-q="4">
 							<img src="images/case-3.png" alt="">
-						</a href="#">
+						</a>
 					</div>
 
 					<div class="product-carousel-item">
 						<div class="fade" data-q="7">
 							<div class="product-info">
-								<a class="title-m" href="#">christmas fox</a>
+								<a class="title-m" href="prod_card.htm">christmas fox</a>
 								<div class="price-m">1 200 грн.</div>
 							</div>
 						</div>
 						
-						<a href="#" class="img animate-item move" data-q="5">
+						<a href="prod_card.htm" class="img animate-item move" data-q="5">
 							<img src="images/case-4.png" alt="">
-						</a href="#">
+						</a>
 					</div>
 
 					<div class="product-carousel-item">
 						<div class="fade" data-q="8">
 							<div class="product-info">
-								<a class="title-m" href="#">red snowflake</a>
+								<a class="title-m" href="prod_card.htm">red snowflake</a>
 								<div class="price-m">75 грн.</div>
 							</div>
 						</div>
-						<a href="#" class="img animate-item move" data-q="6">
+						<a href="prod_card.htm" class="img animate-item move" data-q="6">
 							<img src="images/case-5.png" alt="">
-						</a href="#">
+						</a>
 					</div>
 				</div>
 			</div><!-- / Carousel Top -->
@@ -797,7 +817,7 @@
 						<p>
 							Наложенный платеж. <br> Отправка заказа Новой Почтой, <br>оплата происходит при получении.
 						</p>
-						<a href="" class="det">Подробнее про оплату</a>
+						<a href="faq.htm#t3" class="det">Подробнее про оплату</a>
 					</div>
 
 					<div class="detail-info-item block animate-item move" data-q="2">
@@ -810,7 +830,7 @@
 							практически, в любой город <br>
 							Украины за 1-2 дня.
 						</p>
-						<a href="" class="det">Подробнее про доставку</a>
+						<a href="faq.htm#t2" class="det">Подробнее про доставку</a>
 					</div>
 
 					<div class="detail-info-item block animate-item move" data-q="3">
@@ -823,7 +843,7 @@
 							«Нова Пошта» или в одном <br>
 							из наших шоурумов.
 						</p>
-						<a href="" class="det">Подробнее про гарантию</a>
+						<a href="faq.htm#t5" class="det">Подробнее про гарантию</a>
 					</div>
 				</div>
 			</div><!-- / Detail -->
@@ -835,11 +855,10 @@
 		<!-- Footer -->
 		<footer id="footer" class="animate-item fade" data-screen="0.3">	
 			<div class="footer">
-				<div class="footer-top">
+
+				<div class="footer-left">
 					<a class="info-block st" target="_blank" href="https://goo.gl/maps/xeaMWxbuXrq">
-						<div>
-							Ул. Татарская 3/2 , Киев, Украина
-						</div>
+						<div>Ул. Татарская 3/2 , Киев, Украина</div>
 						<div>Пн-Пт , с 9:00 до 18:00</div>
 					</a>
 
@@ -847,24 +866,42 @@
 						<div>Наш е-мейл</div>
 						<div><a href="">bolo.cases@gmail.com</a></div>
 					</div>
-
-					<ul class="social">
-						<li class="ico-1"><a href=""></a></li>
-						<li class="ico-2"><a href=""></a></li>
-						<li class="ico-3"><a href=""></a></li>
-					</ul>
 				</div>
 
-				<div class="footer-btm">
-					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»</div>
+				<div class="footer-center">
+					<span>Принимаем к оплате :</span>
 					<div class="partners">
 						<a href=""><img src="images/part-1.jpg" alt=""></a>
 						<a href=""><img src="images/part-2.jpg" alt=""></a>
 						<a href=""><img src="images/part-3.jpg" alt=""></a>
 						<a href=""><img src="images/part-4.jpg" alt=""></a>
 					</div>
-					<div class="rights">Все права защищены</div>
+
+					<span>Наши соцсети :</span>
+					<ul class="social">
+						<li class="ico-1"><a href=""></a></li>
+						<li class="ico-2"><a href=""></a></li>
+						<li class="ico-3"><a href=""></a></li>
+						<li class="ico-4"><a href=""></a></li>
+					</ul>
 				</div>
+
+				<div class="footer-right">
+					<span>Скидка постоянным клиентам 10%</span>
+
+					<div class="form-input-r mail-input">
+						<label>Ваш е-мейл</label>
+						<input type="text">
+
+						<button class="btn btn-b">
+							<span>Получить скидку</span>
+						</button>
+					</div>
+
+					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»  Все права защищены</div>
+				</div>
+
+				
 			</div>
 		</footer><!-- / Footer -->
 		
@@ -896,7 +933,7 @@
     			touchMoveStopPropagation: true,
     			slidesPerView: "auto",
     			freeMode: false,
-    			autoplay: 1000,
+    			autoplay: 100000,
     			touchRatio: 0.5,
     			
     			loop: true,

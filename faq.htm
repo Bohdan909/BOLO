@@ -96,10 +96,10 @@
 						<div class="header-items">
 							<div class="items-wrap">
 								<button id="header-basket-b" class="items fav" type="button" data-toggle="modal" data-target="#fav-drop">
-									<div>0</div>
+									<div class="count-items-fav">0</div>
 								</button>
 
-								 <div id="fav-drop" class="modal fade" tabindex="-1"   role="dialog">
+								<div id="fav-drop" class="modal fade" tabindex="-1"   role="dialog">
                                 	<div class="socket">
 										<div class="header-items-drop header-fav modal-dialog">
 											<div class="header-drop-hold">
@@ -107,6 +107,15 @@
 											</div>
 
 											<div class="header-drop-products"></div>
+
+											<a href="wishlist.htm" class="btn">
+												<span>Перейти в избранное</span>
+											</a>
+
+											<div class="header-drop-count">
+											    товаров:
+											    <span class="count-items-fav">0</span> 
+											</div>
 										</div>
 									</div>
 								</div>
@@ -130,8 +139,9 @@
 											</a>
 
 											<div class="header-drop-count">
-												<span class="count-items">0</span> 
-												товара на сумму 
+												товаров:
+												<span class="count-items">0</span>, 
+												 на сумму 
 												<span class="count-price">0</span> 
 												грн.
 											</div>
@@ -149,9 +159,19 @@
 									<div class="socket">
 										<div class="modal-dialog cabinet-drop" role="document">
 											<ul>
-												<li><a href="">Контакты</a></li>
-												<li><a href="">Доставка</a></li>
-												<li><a href="">история</a></li>
+												<li>
+													<a href="cabinet.htm">
+														Контакты
+													</a>
+												</li>
+												<li>
+													<a href="cabinet.htm#tab-2">	Доставка
+													</a>
+												</li>
+												<li>
+													<a href="cabinet.htm#tab-4">	история
+													</a>
+												</li>
 												<li class="logout"><a href="">Выйти из аккаунта</a></li>
 											</ul>
 										</div>
@@ -180,10 +200,10 @@
 			
 			<!-- Content -->
 			<div id="content" class="socket">
-				<ul class="breadcrumbs animate-item fade">
+				<!-- <ul class="breadcrumbs animate-item fade">
 			    	<li><a href="">Главная страница</a></li>
 			    	<li>Частые вопросы</li>
-			    </ul>    
+			    </ul>   -->  
 				
 				<hgroup class="title-wrap title-wrap-center animate-item fade">
 			    	<div class="title">Частые вопросы</div>
@@ -229,76 +249,100 @@
 
 						<div class="swiper-flow faq-navigation">
 							<div class="swiper-container">
-								<div class="swiper-wrapper">
-									<div class="faq-tab swiper-slide is-current" 
-									     data-tab="t1">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-1.png" alt="">
+								<ul class="swiper-wrapper tabs tabs-cab nav nav-pills">
+									<li class="faq-tab swiper-slide active">
+									    <a href="#t1" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="29" src="images/ico-faq-1.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="29" src="images/ico-faq-1-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">качество</div>
-										<span>3 вопроса</span>
-									</div>	
-									<div class="faq-tab swiper-slide"
-										 data-tab="t2">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-2.png" alt="">
+											<div class="prod-name">качество</div>
+											<span>3 вопроса</span>
+										</a>
+									</li>	
+									<li class="faq-tab swiper-slide">
+										<a href="#t2" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="29" src="images/ico-faq-2.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="29" src="images/ico-faq-2-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">Доставака</div>
-										<span>12 вопроса</span>
-									</div>
-									<div class="faq-tab swiper-slide"
-									     data-tab="t3">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-3.png" alt="">
+											<div class="prod-name">Доставака</div>
+											<span>12 вопроса</span>
+										</a>
+									</li>
+									<li class="faq-tab swiper-slide">
+									    <a href="#t3" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="26" src="images/ico-faq-3.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="26" src="images/ico-faq-3-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">оплата</div>
-										<span>6 вопроса</span>
-									</div>
-									<div class="faq-tab swiper-slide"
-									     data-tab="t4">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-4.png" alt="">
+											<div class="prod-name">оплата</div>
+											<span>6 вопроса</span>
+										</a>
+									</li>
+									<li class="faq-tab swiper-slide">
+									 	<a href="#t4" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="25" src="images/ico-faq-4.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="25" src="images/ico-faq-4-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">акциа</div>
-										<span>10 вопроса</span>
-									</div>
-									<div class="faq-tab swiper-slide"
-									     data-tab="t5">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-5.png" alt="">
+											<div class="prod-name">акциа</div>
+											<span>10 вопроса</span>
+										</a>
+									</li>
+									<li class="faq-tab swiper-slide">
+										<a href="#t5" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="26" src="images/ico-faq-5.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="26" src="images/ico-faq-5-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">гарантия</div>
-										<span>6 вопроса</span>
-									</div>
-									<div class="faq-tab swiper-slide"
-										 data-tab="t6">
-										<div class="ico">
-											<div class="def">
-												<img src="images/ico-faq-6.png" alt="">
+											<div class="prod-name">гарантия</div>
+											<span>6 вопроса</span>
+										</a>
+									</li>
+									<li class="faq-tab swiper-slide">
+										<a href="#t6" data-toggle="tab">
+											<div class="ico">
+												<div class="def">
+													<img width="20" src="images/ico-faq-6.svg" alt="">
+												</div>
+												<div class="act">
+													<img width="20" src="images/ico-faq-6-a.svg" alt="">
+												</div>
 											</div>
-										</div>
-										<div class="prod-name">другие</div>
-										<span>2 вопроса</span>
-									</div>
-								</div>
+											<div class="prod-name">другие</div>
+											<span>2 вопроса</span>
+										</a>
+									</li>
+								</ul>
 							</div>		
 						</div>
 
 						
 					</aside>
 
-					<div class="faq-right-col">
-						<div id="t1" class="tab-block animate-item is-show">
+					<div class="faq-right-col tab-content">
+						<div id="t1" class="active tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -379,7 +423,7 @@
 							</div>
 						</div>
 
-						<div id="t2" class="tab-block animate-item">
+						<div id="t2" class="tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -491,7 +535,7 @@
 
 						</div>
 
-						<div id="t3" class="tab-block animate-item">
+						<div id="t3" class="tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -557,7 +601,7 @@
 							
 						</div>
 
-						<div id="t4" class="tab-block animate-item">
+						<div id="t4" class="tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -638,7 +682,7 @@
 							</div>
 						</div>
 
-						<div id="t5" class="tab-block animate-item">
+						<div id="t5" class="tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -685,7 +729,7 @@
 							</div>
 						</div>
 
-						<div id="t6" class="tab-block animate-item">
+						<div id="t6" class="tab-pane animate-item">
 							<div class="faq-block block move" data-q="1">
 								<div class="faq-head">
 									<span>Можно ли оплачивать наложенным платежом?</span>
@@ -779,7 +823,8 @@
 		<!-- Footer -->
 		<footer id="footer" class="animate-item fade" data-screen="0.3">	
 			<div class="footer">
-				<div class="footer-top">
+
+				<div class="footer-left">
 					<a class="info-block st" target="_blank" href="https://goo.gl/maps/xeaMWxbuXrq">
 						<div>Ул. Татарская 3/2 , Киев, Украина</div>
 						<div>Пн-Пт , с 9:00 до 18:00</div>
@@ -789,24 +834,42 @@
 						<div>Наш е-мейл</div>
 						<div><a href="">bolo.cases@gmail.com</a></div>
 					</div>
-
-					<ul class="social">
-						<li class="ico-1"><a href=""></a></li>
-						<li class="ico-2"><a href=""></a></li>
-						<li class="ico-3"><a href=""></a></li>
-					</ul>
 				</div>
 
-				<div class="footer-btm">
-					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»</div>
+				<div class="footer-center">
+					<span>Принимаем к оплате :</span>
 					<div class="partners">
 						<a href=""><img src="images/part-1.jpg" alt=""></a>
 						<a href=""><img src="images/part-2.jpg" alt=""></a>
 						<a href=""><img src="images/part-3.jpg" alt=""></a>
 						<a href=""><img src="images/part-4.jpg" alt=""></a>
 					</div>
-					<div class="rights">Все права защищены</div>
+
+					<span>Наши соцсети :</span>
+					<ul class="social">
+						<li class="ico-1"><a href=""></a></li>
+						<li class="ico-2"><a href=""></a></li>
+						<li class="ico-3"><a href=""></a></li>
+						<li class="ico-4"><a href=""></a></li>
+					</ul>
 				</div>
+
+				<div class="footer-right">
+					<span>Скидка постоянным клиентам 10%</span>
+
+					<div class="form-input-r mail-input">
+						<label>Ваш е-мейл</label>
+						<input type="text">
+
+						<button class="btn btn-b">
+							<span>Получить скидку</span>
+						</button>
+					</div>
+
+					<div class="copyright">&copy; 2009-2016 — ООО «bolo.cases»  Все права защищены</div>
+				</div>
+
+				
 			</div>
 		</footer><!-- / Footer -->
 
