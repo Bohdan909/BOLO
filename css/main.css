@@ -585,6 +585,7 @@ h5 {
 
 .title-wrap-center {
   margin-bottom: 37px;
+  text-align: center;
 }
 @media (max-width: 1024px) {
   .title-wrap-center {
