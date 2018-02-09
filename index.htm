@@ -158,32 +158,10 @@
 							</div>
 
 							<div class="header-cabinet-wrap">
-								<button class="cabinet-l" type="button" data-toggle="modal" data-target="#cabinet-drop">
-									<span>Юзер</span>
+								<button class="cabinet-l" type="button" data-toggle="modal" data-target="#cabinet-login">
+									<span>Войти</span>
 								</button>
 
-								<div class="modal fade" id="cabinet-drop" tabindex="-1" role="dialog">
-									<div class="socket">
-										<div class="modal-dialog cabinet-drop" role="document">
-											<ul>
-												<li>
-													<a href="cabinet.htm">
-														Контакты
-													</a>
-												</li>
-												<li>
-													<a href="cabinet.htm#tab-2">	Доставка
-													</a>
-												</li>
-												<li>
-													<a href="cabinet.htm#tab-4">	история
-													</a>
-												</li>
-												<li class="logout"><a href="">Выйти из аккаунта</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>		
@@ -912,6 +890,107 @@
 				
 			</div>
 		</footer><!-- / Footer -->
+
+		<!-- Popups -->
+		<div class="modal modal-bg fade" id="cabinet-login" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-p" role="document">
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+
+				<div class="title-2">Войти</div>
+				<form class="modal-form" action="">
+					<div class="form-input-r">
+						<label>E-mail</label>
+						<input type="email">
+					</div>
+
+					<div class="form-input-r">
+						<label>Пароль</label>
+						<input type="password">
+					</div>
+
+					<a class="link" href="">Забыли пароль ?</a>
+
+					<div class="social-login">
+						<span>Вход через соц.сеть</span>
+						<ul>
+							<li>
+								<a href=""><img src="images/sc-1.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-2.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-3.png" alt=""></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="buttons-btm">
+						<button class="btn btn-b btn-q">
+							<span>Войти</span>
+						</button>
+						<button class="btn btn-b btn-g btn-q" type="button" data-toggle="modal" data-target="#registration">
+							Регистрация
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="modal modal-bg fade" id="registration" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-p" role="document">
+				<button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true"></span>
+				</button>
+
+				<div class="title-2">Регистрация</div>
+
+				<form class="modal-form" action="">
+					<div class="form-input-r">
+						<label>ФИО</label>
+						<input type="text">
+					</div>
+
+					<div class="form-input-r">
+						<label>Номер телефона</label>
+						<input type="tel">
+					</div>
+
+					<div class="form-input-r">
+						<label>E-mail</label>
+						<input type="email">
+					</div>
+
+					<div class="form-input-r">
+						<label>Пароль</label>
+						<input type="password">
+					</div>
+
+					<div class="social-login">
+						<span>Вход через соц.сеть</span>
+						<ul>
+							<li>
+								<a href=""><img src="images/sc-1.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-2.png" alt=""></a>
+							</li>
+							<li>
+								<a href=""><img src="images/sc-3.png" alt=""></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="buttons-btm">
+						<button class="btn btn-b btn-q">
+							<span>Регистрация</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
 		
 
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
