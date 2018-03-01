@@ -59,15 +59,15 @@ module.exports  = function(grunt){
 		},
 
 		sass: {
-		    dist: {
-			  options: {
-			  	style: 'expanded'
-			  },
-		      files: {
-                'css/main.css': 'sass/main.scss'
-              }
-		    }
-		},
+	        options: {
+	            sourceMap: true
+	        },
+	        dist: {
+	            files: {
+	                'css/main.css': 'sass/main.scss',
+	            }
+	        }
+	    },
 
 		watch: {
 			src: {
@@ -104,7 +104,7 @@ module.exports  = function(grunt){
 	grunt.loadNpmTasks("grunt-string-replace");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-contrib-sass");
+	grunt.loadNpmTasks("grunt-sass");
 	grunt.loadNpmTasks("grunt-remove-logging");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");

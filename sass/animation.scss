@@ -100,7 +100,7 @@ $d: 50px;
         #header.animated {
             top: -200px;
         
-            .logo-wrap, .logo-wrap span, .info-block.tel, .header-items, .menu li a {
+            .logo-wrap, .logo-wrap span, .info-block.tel, .header-items, .menu > ul > li > a {
                 transition: all 0.2s ease-out; 
                 -webkit-transition: all 0.2s ease-out; 
                 -ms-transition: all 0.2s ease-out;
@@ -117,7 +117,7 @@ $d: 50px;
                 }
             }
 
-            .menu li a {
+            .menu > ul > li > a {
                 position: relative;
                 top: -20px;
             }

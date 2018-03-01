@@ -40,14 +40,11 @@ document.documentElement.className = document.documentElement.className.replace(
 
             });
 
-            ClickOut.prototype.menuClose = function(){
+            $menuWrap.on("click", function(e){
+                if ($(e.target).closest($(".menu-mobile")).length) return;
                 $menuWrap.fadeOut(450);
                 $("#header").addClass("shadow");
                 menuClose();
-            };
-
-            $menuWrap.on("click", function(){
-                new ClickOut(".menu").menuClose();
             });
 
             function menuOpen(){
@@ -521,36 +518,65 @@ document.documentElement.className = document.documentElement.className.replace(
             });
 
             // Click Option
-            $(".filter-option").on("click", function(){
-                var $this = $(this),
-                    optSel = $this.find("span").text();
-                    
-                $this
-                    .parents(".filter-item")
-                    .removeClass("is-open")
-                    .find(".filter-item-head")
-                    .addClass("is-active")
-                    .find("span")
-                    .text(optSel);
+            $(".filter-option").on("click", function(e){
+                var $this      = $(this);
+                var indexItem  = $this.index();
+                var filterItem = $this.parents(".filter-item");
 
-                $bg.attr("style", "opacity: 0");  
+                if ($this.hasClass("is-active")){
+                    $this.removeClass("is-active");
+                    removeSelectOption(indexItem, $this);
+
+                    filterCheck($this);
+                } else {
+                    $this.addClass("is-active");
+                    addSelectOption(indexItem, $this);
+                } 
+
+                // filterItem.removeClass("is-open");
+                // $bg.attr("style", "opacity: 0");
             });
 
-            // Delete
-            var filterArray = $(".filter-item-head span").map(function(){
-                return $(this).text();
-            }).get();
-
             $del.on("click", function (){
-                var indexItem = $(this).parents(".filter-item").index();
+                var indexItem = $(this).parent().index() - 1;
 
                 $(this)
                     .parent()
-                    .removeClass("is-active")
-                    .end()
-                    .next("span")
-                    .text(filterArray[indexItem]);
+                    .removeClass("is-show animate")
+                    .parents(".filter-item")
+                    .find(".filter-option")
+                    .eq(indexItem)
+                    .removeClass("is-active");
+
+                filterCheck($(this));   
             });
+
+            function addSelectOption(index, this_){
+                var filterItem = this_.parents(".filter-item");
+                var selectItem = filterItem.find(".filter-select").eq(index);
+
+                selectItem
+                    .addClass("is-show")
+                    .parent()
+                    .find(".filter-name").hide();
+
+                setTimeout(function(){ selectItem.addClass("animate") }, 200);    
+            }   
+
+            function removeSelectOption(index, this_){
+                this_.parents(".filter-item")
+                    .find(".filter-select")
+                    .eq(index)
+                    .removeClass("is-show animate")
+            } 
+
+            function filterCheck(this_){
+                var filterItem = this_.parents(".filter-item");
+
+                if (!filterItem.find(".filter-item-drop .filter-option").is(".is-active")){
+                    filterItem.find(".filter-name").fadeIn(400);
+                }
+            }
         }());
 
         // Filter Mobile
@@ -918,8 +944,5 @@ document.documentElement.className = document.documentElement.className.replace(
             });
         };
     };
-    
-    
-
 }(jQuery));
 

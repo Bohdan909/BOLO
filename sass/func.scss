@@ -82,8 +82,6 @@ $mobile-width-sm: 374px;
     }
 }
 
-
-
 // Web Kit Hack
 @mixin wk {
 	@media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -283,6 +281,12 @@ $mobile-width-sm: 374px;
 }
 
 // Flexbox
+@mixin display-flex {
+    display: flex;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+}
+
 @mixin flex($val) {
     display: flex;
     display: -webkit-flexbox;
@@ -290,6 +294,17 @@ $mobile-width-sm: 374px;
 
     justify-content: $val;
     -webkit-justify-content: $val;
+}
+
+@mixin flex-vert($val) {
+    @include display-flex;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-justify-content: $val;
+    justify-content: $val;
 }
 
 // Visibility Hidden
